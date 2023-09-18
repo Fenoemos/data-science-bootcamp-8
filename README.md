@@ -10,3 +10,6 @@ My data portfolio for data analyst role
 
 I learn a lof of stuff related to data science skills. This bootcamp have 10 sprints
 - bulle point
+
+
+You can find me on https://www.linkedin.com/in/phattharachai-m/
