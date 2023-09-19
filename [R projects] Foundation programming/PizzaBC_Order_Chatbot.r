@@ -51,7 +51,7 @@ order_chatbot <- function() {
   chat4 <- as.numeric(readLines("stdin", n=1))
   total <- total + price[chat4]
   
-        
+  # Print summarize order: It have 2 case, with/without "tomyum" pizza, so "if" had been used to print the correct sumarize order
   if (i == 'yes') {
       print(paste("Today, you have", our_pizzas[chat3], size[chat4], "size and", tomyum, size2, "size", "so, your total is ", total, "CAD, thank you have a good day"))
   }
@@ -60,4 +60,5 @@ order_chatbot <- function() {
   }
 }
 
+#call function to use it
 order_chatbot()
