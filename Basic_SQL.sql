@@ -1,4 +1,9 @@
+-- create database
 .open restaurant.db
+
+--------------------------------------------------------------------------------------------------
+-- To create a table, use "CREATE"
+-- But in this code, it need to drop table first because when call "CREATE" the exist table it will 
 
 -- create table 1
 DROP TABLE customers;  --just for create a same table
