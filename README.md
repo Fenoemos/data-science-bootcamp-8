@@ -15,3 +15,6 @@
 - Tableau Public
 
 #### You can also find me on https://www.linkedin.com/in/phattharachai-m/
+
+#### Declaration
+I hereby confirm that all works contained herein this site, I wrote it all myself.
