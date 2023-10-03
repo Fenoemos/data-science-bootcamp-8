@@ -1,0 +1,314 @@
+---
+title: "Document - Machine Learning to predict India house price between 2016 and 2017"
+author: "Phattharachai Maichin"
+date: "2023-10-02"
+output:
+  html_document: default
+  pdf_document: default
+subtitle: "Source data: https://data.world/dataindianset2000/house-price-india"
+---
+> **Before start**
+
+This document I created to cover how to use "R programming" to manipulate and analyst data to find relationships among variables to predict India house price based on data in year 2016 and 2017.
+
+**Introduction to Machine Learning: **
+I have learnt about Basic Machine Learning Workflow and I summarized it in the picture below to demonstrate a basic machine learning workflow.
+
+```{r echo=FALSE}
+# Simpify of ML workflow
+# FullData --(clean)--> availableData --(split)--> trainData <--(retrain)
+#                           |                         |           |
+#                        (split)                      |-----------|
+#                           |                         |
+#                           v                         v                              
+#                       testData --(Test model)--> Score (Prediction model)
+#                                                     |
+#                                                     |
+#                                                     v
+#                                                 Evaluate
+
+# Data split may be 70/30 or 80/20 or other based on objective
+
+## Turn into flowchart with R by using "grViz()" function in library(DiagrammeR)
+library(DiagrammeR)
+workflow <- grViz("digraph flowchart {
+            # node definitions with substituted label text
+            node [fontname = Helvetica, shape = rectangle]        
+            tab1 [label = '@@1']
+            tab2 [label = '@@2']
+            tab3 [label = '@@3']
+            tab4 [label = '@@4']
+            tab5 [label = '@@5']
+            tab6 [label = '@@6']
+            tab7 [label = '@@7']
+
+            # edge definitions with the node IDs
+            tab1 -> tab2;
+            tab3 -> tab7 -> tab3;
+            tab2 -> tab3 -> tab5;
+            tab2 -> tab4 -> tab5;
+            tab5 -> tab6
+            }
+
+            [1]: 'FullData'
+            [2]: 'availableData (Clean data)'
+            [3]: 'trainData (Split)'
+            [4]: 'testData (Split)'
+            [5]: 'Score (Prediction model)'
+            [6]: 'Evaluate'
+            [7]: 'trainData (Retrain)'
+            ")
+
+(workflow)
+```
+
+### Install packages
+Packages have been used in this project are "tidyverse" for manage data, "caret" for analyst data, and "readxl" for read excel file.
+```{r include=FALSE}
+# install and call library
+# install.packages("tidyverse"); install.packages("caret"); install.packages("readxl")
+library(tidyverse); library(caret); library(readxl)
+```
+
+### Preview dataset
+There are many ways to preview dataset such as View(), head(), glimpse(), str() and other.
+```{r}
+# Original data is stored as shown in folder name
+df2016 <- read_excel("C:/Users/phatt/Desktop/Project data analyst/Document - ML to predict house price in India between 2016 and 2017/House Price India.xlsx", sheet = "House 2016")
+df2017 <- read_excel("C:/Users/phatt/Desktop/Project data analyst/Document - ML to predict house price in India between 2016 and 2017/House Price India.xlsx", sheet = "House 2017")
+
+# Preview dataset
+str(df2016)
+```
+
+
+As data structure showed that "Date" column is in numeric format, so there are many ways to manage it such as (1) format Date in Excel file and load file age (2) format in R using "convert_date" in "datetimeutils" package.
+
+```{r}
+# (1) format Date in Excel file and load file age
+## After change date format in excel load file age
+### df2016 <- read_excel("C:/Users/phatt/Desktop/Project data analyst/Document - ML to predict house price in India between 2016 and 2017/House Price India format date.xlsx", sheet = "House 2016")
+### df2017 <- read_excel("C:/Users/phatt/Desktop/Project data analyst/Document - ML to predict house price in India between 2016 and 2017/House Price India format date.xlsx", sheet = "House 2017")
+
+# (2) format in R using "convert_date" in "datetimeutils" package
+## install.packages("datetimeutils")
+library(datetimeutils)
+df2016$Date <- df2016$Date %>%
+  convert_date(type = "Excel", fraction = FALSE, tz = "UTC")
+
+df2017$Date <- df2017$Date %>%
+  convert_date(type = "Excel", fraction = FALSE, tz = "UTC")
+
+# Preview dataset again
+str(df2016)
+```
+
+
+### Preprocess: combine 2016 and 2017 data as one table and check data integrity
+```{r}
+# Combine data using bind_rows
+full_df <- df2016 %>%
+  bind_rows(df2017)
+
+# check data integrity by searching missing values is an important step for data integrity.
+data_inegrity <- function(dataset){
+  percent_existData <- dataset %>% 
+                       complete.cases() %>%
+                       mean()*100
+  nrowoffulldata <<- nrow(dataset)
+  ## write the result
+  cat(paste("Original data row:", nrowoffulldata, "\n"))
+  cat(paste("Percent exist data:", as.character(percent_existData), "% \n"))
+  if (percent_existData == 100){
+  print("Percent exist data is 100%, the data is ready")
+  } else {
+  print("Percent exist data is not 100%, need to clean data")
+  }
+}
+
+data_inegrity(full_df) # It returns "Percent exist data is 100%, the data is ready".
+```
+
+### Preprocess II: Explore data especially the "dependent Variable (AKA y)", before analysis
+```{r}
+# Use "ggplot" to visualize
+ggplot(data = full_df, mapping = aes(x=Price)) + 
+  geom_histogram() ## It showed right skew
+
+# Log transformation may be applied to normalize it.
+full_df$Price <- log(full_df$Price)
+
+# Use "ggplot" to visualize again
+ggplot(data = full_df, mapping = aes(x=Price)) + 
+  geom_histogram() ## It showed normal distribution
+
+## Note that after analysis does forget to take log out!!!
+```
+
+### Preprocess III: Explore data to select "related independent variables"
+There are many factor that can lead to increase the price such as number of bedrooms, number of bathrooms, living area, Built Year, and Number of schools nearby. These related independent variables have been considered to predict the India house price.
+```{r}
+select_df <- full_df %>%
+  select('number of bedrooms', 'number of bathrooms','living area', 'Built Year', 'Number of schools nearby', 'Price')
+```
+
+
+### Split data into train_data and test_data
+```{r}
+# Then, function below is used to split data into train_data and test_data
+## Seed is set to keep the random sampling
+## function need two input 1) Dataset 2) sample size by percent (from 0 - 1)
+split_data <- function(availableData, percent_sample){
+  set.seed(38)
+  id <- sample(nrowoffulldata, size = percent_sample*nrowoffulldata)
+  train_data <<- availableData[id, ]
+  test_data <<- availableData[-id, ]
+}
+
+# call split_data(cleanData, 0.7) function to use cleanData that split 70% to train and 30% to test set
+split_data(select_df, 0.7)
+
+# Just to see split data
+(train_data); (test_data)
+
+```
+
+### Resampling techniques
+Resampling techniques are statistical methods used to generate new data points in a dataset by randomly picking data points from the existing dataset. They help in creating new synthetic datasets for training machine learning models and to estimate the properties of a dataset when the dataset is unknown, difficult to estimate, or when the sample size of the dataset is small.
+
+Common methods of resampling are leave one out cross-validation, K-fold cross-validation and bootstrap.
+```{r}
+# create train control object
+# for bootstrap
+ctrl_boot <- trainControl(
+  method = "boot",   #bootstrap
+  number = 10,
+  verboseIter = TRUE #print log, when done each iteration
+)
+# for leave one out cross-validation
+ctrl_loocv <- trainControl( # this is not suitable for large data.
+  method = "LOOCV",   #leave one out cross-validation
+  verboseIter = TRUE #print log, when done each iteration
+)
+# for K-fold cross-validation
+ctrl_cv <- trainControl(
+  method = "cv",      #K-fold cross-validation
+  number = 5,         #Number of fold, normally we used 5 or 10
+  verboseIter = TRUE #print log, when done each iteration
+)
+
+```
+
+### Train Models (With resampling techniques)
+There are many model that can be used to train data. There are two main group (1) Regression and (2) Classification. In this document, the price is numeric value, so regression models will be used.
+```{r include=FALSE}
+########################## Linear regression ##########################
+#### show all three train control object
+model_lm_boot <- train(Price ~ .,
+               data = train_data,
+               method = "lm", 
+               trControl = ctrl_boot)
+
+#model_lm_loocv <- train(Price ~ ., #It is not often used in real practice
+#               data = train_data,
+#               method = "lm", 
+#               trControl = ctrl_loocv)
+
+model_lm_cv <- train(Price ~ ., # Most use for resampling
+               data = train_data,
+               method = "lm", 
+               trControl = ctrl_cv)
+
+########################## Random forest ##########################
+#### show only K-fold cross-validation
+#### not turn hyper-parameter yet
+model_rf_wt_cv <- train(Price ~ .,
+               data = train_data,
+               method = "rf", # random forest
+               trControl = ctrl_cv)
+# this model took hours to train
+
+########################## K-Nearest Neighbor(KNN) ##########################
+#### show only K-fold cross-validation
+#### not turn hyper-parameter yet
+model_knn_wt_cv <- train(Price ~ .,
+               data = train_data, 
+               method = "knn", 
+               trControl = ctrl_cv)
+```
+
+### Test Models (AKA prediction)
+```{r include=FALSE}
+########################## linear regression ##########################
+
+predict_lm_boot <- predict(model_lm_boot, newdata=test_data)
+#predict_lm_loocv <- predict(model_lm_loocv, newdata=test_data)
+predict_lm_cv <- predict(model_lm_cv, newdata=test_data)
+predict_rf_wt_cv <- predict(model_rf_wt_cv, newdata=test_data)
+predict_knn_wt_cv <- predict(model_knn_wt_cv, newdata=test_data)
+```
+
+### Evaluate Models
+```{r echo=FALSE}
+# create function to evaluate models (for regression)
+# mean absolute error
+mae <- function(predict_col, actual_col){
+  mae_result <- MAE(predict_col, actual_col)
+  cat(paste("Mean absolute error of this model is ", round(mae_result,2), "\n"))
+}
+
+# root mean square error
+rmse <- function(predict_col, actual_col){
+  rmse_result <- RMSE(predict_col, actual_col)
+  cat(paste("Root mean square error of this model is ", round(rmse_result,2), "\n"))
+}
+
+# r square
+rsq <- function(predict_col, actual_col){
+  rsq_result <- cor(predict_col, actual_col)**2
+  cat(paste("r-square of this model is ", round(rsq_result,2), "\n"))
+}
+
+print("model_lm_boot")
+mae(predict_lm_boot, test_data$Price)
+rmse(predict_lm_boot, test_data$Price)
+rsq(predict_lm_boot, test_data$Price)
+
+#print("model_lm_loocv")
+#mae(predict_lm_loocv, test_data$Price)
+#rmse(predict_lm_loocv, test_data$Price)
+#rsq(predict_lm_loocv, test_data$Price)
+
+print("model_lm_cv")
+mae(predict_lm_cv, test_data$Price)
+rmse(predict_lm_cv, test_data$Price)
+rsq(predict_lm_cv, test_data$Price)
+
+print("model_rf_wt_cv")
+mae(predict_rf_wt_cv, test_data$Price)
+rmse(predict_rf_wt_cv, test_data$Price)
+rsq(predict_rf_wt_cv, test_data$Price)
+
+print("model_knn_wt_cv")
+mae(predict_knn_wt_cv, test_data$Price)
+rmse(predict_knn_wt_cv, test_data$Price)
+rsq(predict_knn_wt_cv, test_data$Price)
+```
+
+### Compare Multiple Models
+```{r echo=FALSE}
+# show compare with "K-fold cross-validation" only
+list_models <- list(liner = model_lm_cv,
+                    randomForest = model_rf_wt_cv,
+                    knn = model_knn_wt_cv)
+
+## using resamples() function
+result <- resamples(list_models)
+
+summary(result)
+```
+### Summary
+Model 'randomForest' is the most usable model to predict India house price between 2016 and 2017 data with the highest Rsquared.
+
+#### Note
+If used model to predict, don't forget to take LOG out.
