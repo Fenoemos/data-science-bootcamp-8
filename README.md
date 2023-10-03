@@ -9,6 +9,7 @@ skills <- list(Google Sheets, SQL, R programming, Data Transformation,
               Data Visualization, Statistics, Essential Machine Learning,
               Python, Looker Studio, Tableau Public)
 ```
-Let enjoy my data portfolio for a relative role to data.
+
+Let enjoy my data portfolio for a relative data role.
 
 **You can also find me on** https://www.linkedin.com/in/phattharachai-m/
