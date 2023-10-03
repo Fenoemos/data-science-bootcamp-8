@@ -12,4 +12,5 @@ skills <- list(Google Sheets, SQL, R programming, Data Transformation,
 My digital portfolio for a relative data role is on this site or with [Gdrive digital portfolio](https://drive.google.com/drive/folders/1h4PcZ_iJYxbDntkx9MJ_SPweMVr0buFi?usp=sharing)
 
 Hope you enjoy
+
 **You can also find me on** https://www.linkedin.com/in/phattharachai-m/
