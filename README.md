@@ -1,5 +1,7 @@
 > README
+
 This page is to publish and archive my code during learning phase.
+
 I learnt a lof of new skills related to data analyst skliis through "Data Science Bootcamp 8" by DATAROCKIE and other resource like Coursera.
 
 
