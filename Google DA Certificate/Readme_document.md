@@ -27,6 +27,26 @@ In this project, I am a junior data analyst who is working as part of the market
 Now, Cyclistic has three flexible pricing plans: single-ride passes, full-day passes, and annual memberships. Customers who purchase single-ride or full-day passes are referred to as casual riders. Customers who purchase annual memberships are Cyclistic members.
 
 Moreno, the director of marketing team, has set a goal that aimed to convert casual riders into annual members. Therefore, my task is to analysis Cyclistic historical bike trip data to provide information that will lead to data-driven decision.
-  
 
+
+***
+### Ask
+
+
+**Guiding Questions:**
+• What is the problem you are trying to solve?
+
+The main objective is to determine profiles for the annual members and the casual riders and use the information to create a marketing strategy to assist in turning casual riders into annual members.
+
+• How can your insights drive business decisions?
+
+The insights will aid the marketing team in increasing the amount of annual members.
+
+**Key tasks**
+- [x] Identify the business task
+
+- [x] Consider key stakeholders
+
+**Deliverable**
+- [x] A clear statement of the business task
 
