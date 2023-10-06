@@ -35,7 +35,7 @@ Therefore, my task is to analysis Cyclistic historical bike trip data to provide
  + Primary stakeholder: Cyclistic executive team as they will decide whether to approve the recommended marketing program)
  + Secondary stakeholder: Lily Moreno, the director of marketing and my manager, as she is responsible for the campaigns development to promote benefit to convert Cyclistic's casual riders to become annual members.
 
-```{text}
+```{ls}
 Guiding questing
 1) What is the problem you are trying to solve?
 The major goal is to identify the different of annual members and casual riders, using the data to develop a marketing plan to help convert casual riders into annual members.
