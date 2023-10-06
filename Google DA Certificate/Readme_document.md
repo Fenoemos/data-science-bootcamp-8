@@ -26,29 +26,27 @@ In this project, I am a junior data analyst who is working as part of the market
 
 Now, Cyclistic has three flexible pricing plans: single-ride passes, full-day passes, and annual memberships. Customers who purchase single-ride or full-day passes are referred to as casual riders. Customers who purchase annual memberships are Cyclistic members.
 
-Moreno, the director of marketing team, has set a goal that aimed to convert casual riders into annual members; however, the marketing analyst team needs to better understand how annual members and casual riders differ, why casual riders would buy a membership, and how digital media could affect their marketing tactics. So, Moreno and team members are interested in analyzing the Cyclistic bike trip data to identify trends. These insights will lead my team to design a new marketing strategy to convert casual riders into annual members. But first, Cyclistic executives must approve my recommendations.
+Moreno, the director of marketing team, has set a goal that aimed to convert casual riders into annual members; however, the marketing analyst team needs to better understand how annual members and casual riders differ, why casual riders would buy a membership, and how digital media could affect their marketing tactics. Moreno and team members are interested in analyzing Cyclistic bike trip to identify trends. So, these insights will lead my team to design a new marketing strategy to convert casual riders into annual members. But first, Cyclistic executives must approve my recommendations.
 
 Therefore, my task is to analysis Cyclistic historical bike trip data to provide information that will lead to data-driven decision.
 ***
 ### Ask
 
+**Stakeholders:** 
+ + Primary stakeholder: Cyclistic executive team (The team will decide whether to approve the recommended marketing program)
+ + Secondary stakeholder: Lily Moreno, the director of marketing and my manager, as she is responsible for the development of campaigns and initiatives to promote the bike-share program.
 
+**Guiding questing**
+  * What is the problem you are trying to solve?
 
-**Guiding Questions:**
-- [x] What is the problem you are trying to solve?
+    The major goal is to identify the different of annual members and casual riders, using the data to develop a marketing plan to help convert casual riders into annual members.
+  * How can your insights drive business decisions?
 
-
-The major goal is to identify the profiles of annual members and casual riders, using the data to develop a marketing plan to help convert casual riders into annual members.
-
-- [x] How can your insights drive business decisions?
-
-The marketing team will use the findings to convince and convert casual riders to become more annual members.
+    The marketing team will use the findings to convert and convince casual riders to become more annual members.
 
 **Key tasks**
 - [x] Identify the business task
-
 - [x] Consider key stakeholders
 
 **Deliverable**
 - [x] A clear statement of the business task
-
