@@ -1,6 +1,5 @@
 # Google Data Analytics Professional Certificate: Capstone
 ## Case Study 1: How Does a Bike-Share Navigate Speedy Success?
-
-## By Phattharachai Maichin
-## 2023-10-06
+By [Phattharachai Maichin](https://www.linkedin.com/in/phattharachai-m/)https://www.linkedin.com/in/phattharachai-m/)
+2023-10-06
 ------------
