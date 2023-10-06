@@ -31,10 +31,9 @@ Moreno, the director of marketing team, has set a goal that aimed to convert cas
 Therefore, my task is to analysis Cyclistic historical bike trip data to provide information that will lead to data-driven decision.
 ***
 ### Ask
-
-**Stakeholders:** 
+**Who're stakeholders:** 
  + Primary stakeholder: Cyclistic executive team (The team will decide whether to approve the recommended marketing program)
- + Secondary stakeholder: Lily Moreno, the director of marketing and my manager, as she is responsible for the development of campaigns and initiatives to promote the bike-share program.
+ + Secondary stakeholder: Lily Moreno, the director of marketing and my manager, as she is responsible for the campaigns development to promote benefit to convert Cyclistic's casual riders to become annual members.
 
 **Guiding questing**
   * What is the problem you are trying to solve?
