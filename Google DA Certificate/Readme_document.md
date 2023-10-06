@@ -35,17 +35,47 @@ Therefore, my task is to analysis Cyclistic historical bike trip data to provide
  + Primary stakeholder: Cyclistic executive team as they will decide whether to approve the recommended marketing program)
  + Secondary stakeholder: Lily Moreno, the director of marketing and my manager, as she is responsible for the campaigns development to promote benefit to convert Cyclistic's casual riders to become annual members.
 
-```{ls}
-Guiding questing
+**My task**
+As Moreno has assigned the first question to me: How do annual members and casual riders use Cyclistic bikes differently?
+
+So, my business task is to determine the differences between annual members and casual riders and which marketing strategy will help to increase annual members.
+
+```{text}
+Case study roadmap - ask
+
+'Guiding questing'
 1) What is the problem you are trying to solve?
 The major goal is to identify the different of annual members and casual riders, using the data to develop a marketing plan to help convert casual riders into annual members.
 2) How can your insights drive business decisions?
 The marketing team will use the findings to convert and convince casual riders to become more annual members.
 
-Key tasks
+'Key tasks'
 [x] Identify the business task
 [x] Consider key stakeholders
 
-Deliverable
+'Deliverable'
 [x] A clear statement of the business task
+```
+### Prepare
+
+
+
+
+
+
+
+
+```{text}
+Case study roadmap - Prepare
+
+'Guiding questing'
+1) 
+2) 
+
+'Key tasks'
+[x] 
+[x] 
+
+'Deliverable'
+[x] 
 ```
