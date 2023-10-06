@@ -130,13 +130,16 @@ Case study roadmap - Analyze
 2) Has your data been properly formatted?
 3) What surprises did you discover in the data?
 4) What trends or relationships did you find in the data?
+5) How will these insights help answer your business questions?
 
 'Key tasks'
-[x] 
-[x] 
+[] Aggregate your data so it's useful and accessible
+[] Organize and format your data
+[] Perform calculations
+[] Identify trends and relationships
 
 'Deliverable'
-[x] 
+[] A summary of your analysis
 ```
 ### Share
 
@@ -151,15 +154,21 @@ Case study roadmap - Analyze
 Case study roadmap - Share
 
 'Guiding questing'
-1) 
-2) 
+1) Were you able to answer the question of how annual members and casual riders use Cyclistic bikes differently?
+2) What story does your data tell?
+3) How do your findings relate to your original question?
+4) Who is your audience? What is the best way to communicate with them?
+5) Can data visualization help you share your findings?
+6) Is your presentation accessible to your audience?
 
 'Key tasks'
-[x] 
-[x] 
+[] Determine the best way to share your findings
+[] Create effective data visualizations
+[] Present your findings
+[] Ensure your work is accessible
 
 'Deliverable'
-[x] 
+[] Supporting visualizations and key findings
 ```
 ### Act
 
@@ -174,13 +183,16 @@ Case study roadmap - Share
 Case study roadmap - Act
 
 'Guiding questing'
-1) 
-2) 
+1) What is your final conclusion based on your analysis?
+2) How could your team and business apply your insights?
+3) What next steps would you or your stakeholders take based on your findings?
+4) Is there additional data you could use to expand on your findings?
 
 'Key tasks'
-[x] 
-[x] 
+[] Create your portfolio
+[] Add your case study
+[] Practice presenting your case study to a friend or family member
 
 'Deliverable'
-[x] 
+[] Your top three recommendations based on your analysis
 ```
