@@ -35,18 +35,17 @@ Therefore, my task is to analysis Cyclistic historical bike trip data to provide
  + Primary stakeholder: Cyclistic executive team as they will decide whether to approve the recommended marketing program)
  + Secondary stakeholder: Lily Moreno, the director of marketing and my manager, as she is responsible for the campaigns development to promote benefit to convert Cyclistic's casual riders to become annual members.
 
-```
-**Guiding questing**
-  * What is the problem you are trying to solve?
+```{text}
+Guiding questing
+1) What is the problem you are trying to solve?
 The major goal is to identify the different of annual members and casual riders, using the data to develop a marketing plan to help convert casual riders into annual members.
-  * How can your insights drive business decisions?
+2) How can your insights drive business decisions?
+The marketing team will use the findings to convert and convince casual riders to become more annual members.
 
-    The marketing team will use the findings to convert and convince casual riders to become more annual members.
+Key tasks
+[x] Identify the business task
+[x] Consider key stakeholders
 
-**Key tasks**
-- [x] Identify the business task
-- [x] Consider key stakeholders
-
-**Deliverable**
-- [x] A clear statement of the business task
+Deliverable
+[x] A clear statement of the business task
 ```
