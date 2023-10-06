@@ -29,6 +29,9 @@ Now, Cyclistic has three flexible pricing plans: single-ride passes, full-day pa
 Moreno, the director of marketing team, has set a goal that aimed to convert casual riders into annual members. Therefore, my task is to analysis Cyclistic historical bike trip data to provide information that will lead to data-driven decision.
 
 
+Therefore, my task is to analysis bike usage data to understand how casual riders and annual members use Cyclistic bikes differently, to help create a data driven marketing strategy.
+
+
 ***
 ### Ask
 
@@ -41,7 +44,7 @@ The major goal is to identify the profiles of annual members and casual riders, 
 
 - [x] How can your insights drive business decisions?
 
-The insights will aid the marketing team in increasing the amount of annual members.
+The marketing team will use the findings to convince and convert casual riders to become more annual members.
 
 **Key tasks**
 - [x] Identify the business task
