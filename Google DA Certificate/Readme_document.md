@@ -34,11 +34,12 @@ Moreno, the director of marketing team, has set a goal that aimed to convert cas
 
 
 **Guiding Questions:**
-• What is the problem you are trying to solve?
+- [x] What is the problem you are trying to solve?
 
-The main objective is to determine profiles for the annual members and the casual riders and use the information to create a marketing strategy to assist in turning casual riders into annual members.
 
-• How can your insights drive business decisions?
+The major goal is to identify the profiles of annual members and casual riders, using the data to develop a marketing plan to help convert casual riders into annual members.
+
+- [x] How can your insights drive business decisions?
 
 The insights will aid the marketing team in increasing the amount of annual members.
 
