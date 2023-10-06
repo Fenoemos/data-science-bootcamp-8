@@ -26,14 +26,12 @@ In this project, I am a junior data analyst who is working as part of the market
 
 Now, Cyclistic has three flexible pricing plans: single-ride passes, full-day passes, and annual memberships. Customers who purchase single-ride or full-day passes are referred to as casual riders. Customers who purchase annual memberships are Cyclistic members.
 
-Moreno, the director of marketing team, has set a goal that aimed to convert casual riders into annual members. Therefore, my task is to analysis Cyclistic historical bike trip data to provide information that will lead to data-driven decision.
+Moreno, the director of marketing team, has set a goal that aimed to convert casual riders into annual members; however, the marketing analyst team needs to better understand how annual members and casual riders differ, why casual riders would buy a membership, and how digital media could affect their marketing tactics. So, Moreno and team members are interested in analyzing the Cyclistic bike trip data to identify trends. These insights will lead my team to design a new marketing strategy to convert casual riders into annual members. But first, Cyclistic executives must approve my recommendations.
 
-
-Therefore, my task is to analysis bike usage data to understand how casual riders and annual members use Cyclistic bikes differently, to help create a data driven marketing strategy.
-
-
+Therefore, my task is to analysis Cyclistic historical bike trip data to provide information that will lead to data-driven decision.
 ***
 ### Ask
+
 
 
 **Guiding Questions:**
