@@ -28,7 +28,7 @@ Now, Cyclistic has three flexible pricing plans: single-ride passes, full-day pa
 
 Moreno, the director of marketing team, has set a goal that aimed to convert casual riders into annual members; however, the marketing analyst team needs to better understand how annual members and casual riders differ, why casual riders would buy a membership, and how digital media could affect their marketing tactics. Moreno and team members are interested in analyzing Cyclistic bike trip to identify trends. So, these insights will lead my team to design a new marketing strategy to convert casual riders into annual members. But first, Cyclistic executives must approve my recommendations.
 
-Therefore, my task is to analysis Cyclistic historical bike trip data to provide information that will lead to data-driven decision.
+Therefore, my task is to analyze Cyclistic historical bike trip data to provide information that will lead to data-driven decision.
 ***
 ### Ask
 **Who're stakeholders:** 
@@ -67,6 +67,111 @@ The marketing team will use the findings to convert and convince casual riders t
 
 ```{text}
 Case study roadmap - Prepare
+
+'Guiding questing'
+1) Where is your data located?
+2) How is the data organized?
+3) Are there issues with bias or credibility in this data? Does your data ROCCC?
+4) How are you addressing licensing, privacy, security, and accessibility?
+5) How did you verify the data's integrity?
+6) How does it help you answer your question?
+7) Are there any problems with the data?
+
+'Key tasks'
+[] Download data and store it appropriately
+[] Identify how it's organized
+[] Sort and filter the data
+[] Determine the creaibility of the data
+
+'Deliverable'
+[] A description of all data sources used
+```
+### Process
+
+
+
+
+
+
+
+
+```{text}
+Case study roadmap - Process
+
+'Guiding questing'
+1) Whhat tools are you choosing and why?
+2) Have you ensured your data's integrity?
+3) How can you verify that your data is clean and ready to analyze?
+4) Have you documented your cleaning process so you can review and share those results?
+
+'Key tasks'
+[] Check the data for errors
+[] Choose your tools
+[] Transform the data so you can work with it effectively
+[] Document the cleaning process
+
+'Deliverable'
+[x] Documentation of any cleaning or manipulation of data
+```
+### Analyze
+
+
+
+
+
+
+
+
+```{text}
+Case study roadmap - Analyze
+
+'Guiding questing'
+1) How should you organize your data to perform analysis on it?
+2) Has your data been properly formatted?
+3) What surprises did you discover in the data?
+4) What trends or relationships did you find in the data?
+
+'Key tasks'
+[x] 
+[x] 
+
+'Deliverable'
+[x] 
+```
+### Share
+
+
+
+
+
+
+
+
+```{text}
+Case study roadmap - Share
+
+'Guiding questing'
+1) 
+2) 
+
+'Key tasks'
+[x] 
+[x] 
+
+'Deliverable'
+[x] 
+```
+### Act
+
+
+
+
+
+
+
+
+```{text}
+Case study roadmap - Act
 
 'Guiding questing'
 1) 
