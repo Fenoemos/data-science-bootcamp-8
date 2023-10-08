@@ -57,12 +57,9 @@ The marketing team will use the findings to convert and convince casual riders t
 [x] A clear statement of the business task
 ```
 ### Prepare
-I will use [Cyclistic's historical trip data](https://divvy-tripdata.s3.amazonaws.com/index.html) in the past 3 years and 6 months (from January 2020 to June 2023) to analyze and identify trends. The data has been made available by Motivate International Inc. under this [license.](https://divvybikes.com/data-license-agreement) 
+I will use [Cyclistic's historical trip data](https://divvy-tripdata.s3.amazonaws.com/index.html) to analyze and identify trends. The data has been made available by Motivate International Inc. under this [license.](https://divvybikes.com/data-license-agreement) 
 
-
-
-
-
+The data in the past 18 month (from January 2022 to June 2023) will be used with this project. 
 
 
 ```{text}
@@ -70,7 +67,29 @@ Case study roadmap - Prepare
 
 'Guiding questing'
 1) Where is your data located?
+In the trip data, the data stored in separate files for each month (for example, yyyymm-divy-tripdata). After download data to local computer, I stored it within the same folder "tripdata_202201_to_202306", so total files to work with are 18 files. 
 2) How is the data organized?
+For each file, the data contains 13 column consistently as described below.
+| **Column Number** | **Column Name** | **Description** |
+|--------------|-----------|------------|
+| 1      | ride_id  | 5234       |
+| 2      | rideable_type  | 5234       |
+| 3      | started_at  | 5234       |
+| 4      | ended_at  | 5234       |
+| 5      | start_station_name  | 5234       |
+| 6      | start_station_id  | 5234       |
+| 7      | end_station_name  | 5234       |
+| 8      | end_station_id  | 5234       |
+| 9      | start_lat  | 5234       |
+| 10      | start_lng  | 5234       |
+| 11      | end_lat  | 5234       |
+| 12      | end_lng  | 5234       |
+| 13      | member_casual  | 5234       |
+
+
+
+
+
 3) Are there issues with bias or credibility in this data? Does your data ROCCC?
 4) How are you addressing licensing, privacy, security, and accessibility?
 5) How did you verify the data's integrity?
