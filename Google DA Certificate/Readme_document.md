@@ -117,10 +117,8 @@ Case study roadmap - Prepare (continue)
 [x] A description of all data sources used
 ```
 ### Process
-This folder shows the copy of original data files and will be used throughout this project.
-![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/bf41e577-350d-4603-b39e-6bb3f4bd207d)
-
-The individual `CSV` files will be combined into one file to make it easier to manipulate and analyse by using `R` because each file have more than 100,000 row and to combine it in `Excel` was not suitable to large data.
+The copy of original data files are stored in the folder as shown in the picture. These files will be used and will be used throughout this project. The individual `CSV` files will be combined into one file to make it easier to manipulate and analyse by using `R` because each file have more than 100,000 row and to combine it in `Excel` was not suitable with large data.
+![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/0179d37b-b1fa-4161-bb0c-21a800780a61)
 ```{r}
 # Install "tidyverse" package to manipulate data
 install.packages("tidyverse")
