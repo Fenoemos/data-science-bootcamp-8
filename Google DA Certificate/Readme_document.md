@@ -91,7 +91,7 @@ Case study roadmap - Prepare (continue)
 3) Are there issues with bias or credibility in this data? Does your data ROCCC?
 The data also does `ROCCC` as it is reliable, original, comprehensive, current, and cited because the data is first-party data collected by Cyclist and up-to-date.
 4) How are you addressing licensing, privacy, security, and accessibility?
-The data is open source and provided by the company with their [license.](https://divvybikes.com/data-license-agreement) Moreover, with the data-privacy, the data does not have any personal information.
+The data is open source and provided by the company with their license. Moreover, with the data-privacy, the data does not have any personal information.
 5) How did you verify the data's integrity?
 All 18 files were examined and all of them were consistent in both name of columns and data type throughout each file.
 6) How does it help you answer your question?
