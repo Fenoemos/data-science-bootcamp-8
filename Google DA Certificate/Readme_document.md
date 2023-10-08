@@ -117,6 +117,11 @@ Case study roadmap - Prepare (continue)
 [x] A description of all data sources used
 ```
 ### Process
+![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/77283ecf-bb9a-4658-b54d-351b0fdee62b)
+
+
+
+
 
 
 ```{text}
