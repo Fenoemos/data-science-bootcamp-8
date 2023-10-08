@@ -214,7 +214,11 @@ cleanbyomit(df_bike_unclean)
 
 ```{r}
 # The total data remaining are 8,049,858 rows
-# 
+# Next, data manipulate
+## create a column `ride_length` by subtracting the column `started_at` from the column `ended_at` and format as HH:MM:SS
+
+
+
 ```
 ```{r}
 #
