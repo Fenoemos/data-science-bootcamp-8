@@ -72,24 +72,22 @@ In the trip data, the data stored in separate files for each month (for example,
 For each file, the data contains 13 column consistently as described below.
 ```
 | **Column Number** | **Column Name** | **Description** |
-|--------------|-----------|------------|
-| 1      | ride_id  | 5234       |
-| 2      | rideable_type  | 5234       |
-| 3      | started_at  | 5234       |
-| 4      | ended_at  | 5234       |
-| 5      | start_station_name  | 5234       |
-| 6      | start_station_id  | 5234       |
-| 7      | end_station_name  | 5234       |
-| 8      | end_station_id  | 5234       |
-| 9      | start_lat  | 5234       |
-| 10      | start_lng  | 5234       |
-| 11      | end_lat  | 5234       |
-| 12      | end_lng  | 5234       |
-| 13      | member_casual  | 5234       |
-
-
-
+|-------------------|-----------------|-----------------|
+| 1      | ride_id  | unique id for each ride booking               |
+| 2      | rideable_type  | type of bicycle used                    |
+| 3      | started_at  | datetime data of the time when start trip  |
+| 4      | ended_at  | datetime data of the time when finish trip   |
+| 5      | start_station_name | name of the starting station        |
+| 6      | start_station_id  | unique id of the starting station    |
+| 7      | end_station_name  | name of the ending station           |
+| 8      | end_station_id  | unique id of the ending station        |
+| 9      | start_lat  | latitude of the starting station            |
+| 10     | start_lng  | longitude of the starting station           |
+| 11     | end_lat  | latitude of the ending station                |
+| 12     | end_lng  | longitude of the ending station               |
+| 13     | member_casual  | User type (casual or member)            |
 ```{text}
+Case study roadmap - Prepare (continue)
 3) Are there issues with bias or credibility in this data? Does your data ROCCC?
 4) How are you addressing licensing, privacy, security, and accessibility?
 5) How did you verify the data's integrity?
