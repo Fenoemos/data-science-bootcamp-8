@@ -67,7 +67,8 @@ Case study roadmap - Prepare
 
 'Guiding questing'
 1) Where is your data located?
-In the trip data, the data stored in separate files for each month (for example, yyyymm-divy-tripdata). After download data to local computer, I stored it within the same folder "tripdata_202201_to_202306", so total files to work with are 18 files. 
+In the trip data, the data stored in separate files for each month (for example, yyyymm-divy-tripdata).
+After download data to local computer, I stored it within the same folder "tripdata_202201_to_202306", so total files to work with are 18 files. 
 2) How is the data organized?
 For each file, the data contains 13 column consistently as described below.
 ```
