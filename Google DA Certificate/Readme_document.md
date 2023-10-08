@@ -117,10 +117,114 @@ Case study roadmap - Prepare (continue)
 [x] A description of all data sources used
 ```
 ### Process
-![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/bf41e577-350d-4603-b39e-6bb3f4bd207d){: style="width: 50%; height: 50%;"}
+This folder shows the copy of original data files and will be used throughout this project.
+![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/bf41e577-350d-4603-b39e-6bb3f4bd207d)
+
+The individual `CSV` files will be combined into one file to make it easier to manipulate and analyse by using `R` because each file have more than 100,000 row and to combine it in `Excel` was not suitable to large data.
+```{r}
+# Install "tidyverse" package to manipulate data
+install.packages("tidyverse")
+
+# Call "tidyverse" package to use
+library(tidyverse)
+```
+![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/004adc7f-beb5-4e1c-827d-a66774f91aab)
+
+```{r}
+# Import each CSV files into R and store it in each dataframe
+df2201 <- read.csv("C:\\Users\\phatt\\Desktop\\tripdata_202201_to_202306\\202201-divvy-tripdata.csv")
+df2202 <- read.csv("C:\\Users\\phatt\\Desktop\\tripdata_202201_to_202306\\202202-divvy-tripdata.csv")
+df2203 <- read.csv("C:\\Users\\phatt\\Desktop\\tripdata_202201_to_202306\\202203-divvy-tripdata.csv")
+df2204 <- read.csv("C:\\Users\\phatt\\Desktop\\tripdata_202201_to_202306\\202204-divvy-tripdata.csv")
+df2205 <- read.csv("C:\\Users\\phatt\\Desktop\\tripdata_202201_to_202306\\202205-divvy-tripdata.csv")
+df2206 <- read.csv("C:\\Users\\phatt\\Desktop\\tripdata_202201_to_202306\\202206-divvy-tripdata.csv")
+df2207 <- read.csv("C:\\Users\\phatt\\Desktop\\tripdata_202201_to_202306\\202207-divvy-tripdata.csv")
+df2208 <- read.csv("C:\\Users\\phatt\\Desktop\\tripdata_202201_to_202306\\202208-divvy-tripdata.csv")
+df2209 <- read.csv("C:\\Users\\phatt\\Desktop\\tripdata_202201_to_202306\\202209-divvy-publictripdata.csv")
+df2210 <- read.csv("C:\\Users\\phatt\\Desktop\\tripdata_202201_to_202306\\202210-divvy-tripdata.csv")
+df2211 <- read.csv("C:\\Users\\phatt\\Desktop\\tripdata_202201_to_202306\\202211-divvy-tripdata.csv")
+df2212 <- read.csv("C:\\Users\\phatt\\Desktop\\tripdata_202201_to_202306\\202212-divvy-tripdata.csv")
+df2301 <- read.csv("C:\\Users\\phatt\\Desktop\\tripdata_202201_to_202306\\202301-divvy-tripdata.csv") 
+df2302 <- read.csv("C:\\Users\\phatt\\Desktop\\tripdata_202201_to_202306\\202302-divvy-tripdata.csv") 
+df2303 <- read.csv("C:\\Users\\phatt\\Desktop\\tripdata_202201_to_202306\\202303-divvy-tripdata.csv") 
+df2304 <- read.csv("C:\\Users\\phatt\\Desktop\\tripdata_202201_to_202306\\202304-divvy-tripdata.csv") 
+df2305 <- read.csv("C:\\Users\\phatt\\Desktop\\tripdata_202201_to_202306\\202305-divvy-tripdata.csv") 
+df2306 <- read.csv("C:\\Users\\phatt\\Desktop\\tripdata_202201_to_202306\\202306-divvy-tripdata.csv") 
+```
+![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/c9969cbe-c2a4-48d3-bb2e-f90774348b50)
+```{r}
+# Examine each dataframe by using head(), str(), or glimpse() to quick review data structure
+# before combine each dataframe into one dataframe by using `bind_rows()`
+glimpse(list(df2201, df2202, df2203, df2204, df2205, df2206, df2207, df2208
+             , df2209, df2210, df2211, df2212
+             , df2301, df2302, df2303, df2304, df2305, df2306))
+
+```
+![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/a453f1e7-9e2d-4802-9f03-807f3a76dd46)
 
 
+```{r}
+# The picture above showed an example of glimpse() return which all dataframe had the same data structure.
+# Then, combine each dataframe into one dataframe by using `bind_rows()` and store it as new dataframe
+df_bike_unclean <- bind_rows(list(df2201, df2202, df2203, df2204, df2205, df2206, df2207, df2208
+                                  , df2209, df2210, df2211, df2212
+                                  , df2301, df2302, df2303, df2304, df2305, df2306))
 
+# Next, cleaning data
+# check data integrity by searching missing values is an important step for data integrity.
+## this function I created would print whether data is complete its rows or not.
+data_inegrity <- function(dataset){
+  percent_existData <- dataset %>% 
+    complete.cases() %>%
+    mean()*100
+  nrowoffulldata <<- nrow(dataset)
+  ## write the result
+  cat(paste("Original data row:", nrowoffulldata, "\n"))
+  cat(paste("Percent exist data:", as.character(percent_existData), "% \n"))
+  if (percent_existData == 100){
+    print("Percent exist data is 100%, the data is ready")
+  } else {
+    print("Percent exist data is not 100%, need to clean data")
+  }
+}
+# use the function
+data_inegrity(df_bike_unclean)
+```
+![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/acc8822c-6ec9-4864-8d58-2d4fe4389249)
+
+```{r}
+# As it showed that Percent exist data: 99.8967756474914 % and "Percent exist data is not 100%, need to clean data"
+# So, other function I created to clean data by omit NULL in dataframe.
+## There are many option to clean like drop, omit, replace, and other,
+## So in this project 'omit' method will be applied to the dataframe.
+cleanbyomit <- function(dataset){  
+  cleanData <<- dataset %>%         
+    na.omit()
+  nrowoffulldata <<- dataset %>%  ## used to update nrow of full data after omit
+    na.omit() %>%
+    nrow()
+  cat(paste("Total data rows before clean:", nrow(dataset),
+            "\nSo, Remaining exist data rows:", as.character(nrowoffulldata)))
+}
+
+# use the function, after this cleanData is the dataframe I will work with.
+cleanbyomit(df_bike_unclean)
+```
+![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/1c77ff11-b976-4d6c-ac57-bff68bee2a52)
+
+```{r}
+# The total data remaining are 8,049,858 rows
+# 
+```
+```{r}
+#
+```
+```{r}
+#
+```
+```{r}
+#
+```
 
 
 
@@ -129,6 +233,8 @@ Case study roadmap - Process
 
 'Guiding questing'
 1) What tools are you choosing and why?
+   In this stage, `Excel` was first used, but it did not work because all the file had more over million rows,
+   so 'R' then was used instead to process data before analyzing phase.
 2) Have you ensured your data's integrity?
 3) How can you verify that your data is clean and ready to analyze?
 4) Have you documented your cleaning process so you can review and share those results?
