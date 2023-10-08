@@ -57,7 +57,7 @@ The marketing team will use the findings to convert and convince casual riders t
 [x] A clear statement of the business task
 ```
 ### Prepare
-I will use Cyclistic's historical trip data to analyze and identify trends. The data has been made available by Motivate International Inc. under this [license.](https://divvybikes.com/data-license-agreement) 
+I will use [Cyclistic's historical trip data](https://divvy-tripdata.s3.amazonaws.com/index.html) in the past 3 years and 6 months (from January 2020 to June 2023) to analyze and identify trends. The data has been made available by Motivate International Inc. under this [license.](https://divvybikes.com/data-license-agreement) 
 
 
 
