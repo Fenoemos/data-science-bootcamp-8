@@ -173,39 +173,38 @@ glimpse(list(df2201, df2202, df2203, df2204, df2205, df2206, df2207, df2208
 df_bike_unclean <- bind_rows(list(df2201, df2202, df2203, df2204, df2205, df2206, df2207, df2208
                                   , df2209, df2210, df2211, df2212
                                   , df2301, df2302, df2303, df2304, df2305, df2306))
-## connt total rows in df_bike_unclean
-print
+## count total rows in df_bike_unclean
+cat(paste("Total row in unclean dataframe:", nrow(df_bike_unclean), "rows \n"))
+### the result showed that there are 8,058,176 rows in the original files.
 ```
-
+![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/e3937c4d-7fdb-4535-acec-866d4fbd412b)
+***
 
 ```{r}
-
-# Then, combine each dataframe into one dataframe by using `bind_rows()` and store it as new dataframe
-df_bike_unclean <- bind_rows(list(df2201, df2202, df2203, df2204, df2205, df2206, df2207, df2208
-                                  , df2209, df2210, df2211, df2212
-                                  , df2301, df2302, df2303, df2304, df2305, df2306))
-
-# Next, cleaning data
-# check data integrity by searching missing values is an important step for data integrity.
-## this function I created would print whether data is complete its rows or not.
-data_inegrity <- function(dataset){
-  percent_existData <- dataset %>% 
-    complete.cases() %>%
-    mean()*100
-  nrowoffulldata <<- nrow(dataset)
-  ## write the result
-  cat(paste("Original data row:", nrowoffulldata, "\n"))
-  cat(paste("Percent exist data:", as.character(percent_existData), "% \n"))
-  if (percent_existData == 100){
-    print("Percent exist data is 100%, the data is ready")
-  } else {
-    print("Percent exist data is not 100%, need to clean data")
-  }
+# (Step 3) Cleaning data before any manipulate
+## check data integrity by searching missing values is an important step for data integrity.
+## Note: this function I created would print whether data is complete its rows or not.
+completed_data <- function(dataset){
+    percent_existData <- dataset %>% 
+      complete.cases() %>%
+      mean()*100
+    nrowoffulldata <<- nrow(dataset)
+    ## write the result
+    cat(paste("Original data row:", nrowoffulldata, "\n"))
+    cat(paste("Percent exist data:", as.character(percent_existData), "% \n"))
+    if (percent_existData == 100){
+      print("Percent exist data is 100%, the data is ready")
+    } else {
+      print("Percent exist data is not 100%, need to handle with incomplete data")
+    }
 }
-# use the function
-data_inegrity(df_bike_unclean)
+
+## use the function
+completed_data(df_bike_unclean)
+### the result showed in the first picture of this section.
 ```
-![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/acc8822c-6ec9-4864-8d58-2d4fe4389249)
+![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/4f9563b8-c50f-49f5-aac4-45f376ae7bac)
+
 
 ```{r}
 # As it showed that Percent exist data: 99.8967756474914 % and "Percent exist data is not 100%, need to clean data"
