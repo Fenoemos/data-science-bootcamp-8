@@ -85,23 +85,28 @@ For each file, the data contains 13 column consistently as described below.
 | 10     | start_lng  | longitude of the starting station           |
 | 11     | end_lat  | latitude of the ending station                |
 | 12     | end_lng  | longitude of the ending station               |
-| 13     | member_casual  | User type (casual or member)            |
+| 13     | member_casual  | user type (casual or member)            |
 ```{text}
 Case study roadmap - Prepare (continue)
 3) Are there issues with bias or credibility in this data? Does your data ROCCC?
+The data also does `ROCCC` as it is reliable, original, comprehensive, current, and cited because the data is first-party data collected by Cyclist and up-to-date.
 4) How are you addressing licensing, privacy, security, and accessibility?
+The data is open source and provided by the company with their [license.] (https://divvybikes.com/data-license-agreement) Moreover, with the data-privacy, the data does not have any personal information.
 5) How did you verify the data's integrity?
+All 18 files were examined and all of them were consistent in both name of columns and data type throughout each file.
 6) How does it help you answer your question?
+These data will be used to examine annual members and casual riders to determine if there is any insight behind the riders and bike usage.
 7) Are there any problems with the data?
+In this stage, I think the data does not have any problems, but it would be great if there are more measurements such as satisfaction.
 
 'Key tasks'
-[] Download data and store it appropriately
-[] Identify how it's organized
-[] Sort and filter the data
-[] Determine the creaibility of the data
+[x] Download data and store it appropriately
+[x] Identify how it's organized
+[x] Sort and filter the data
+[x] Determine the creaibility of the data
 
 'Deliverable'
-[] A description of all data sources used
+[x] A description of all data sources used
 ```
 ### Process
 
