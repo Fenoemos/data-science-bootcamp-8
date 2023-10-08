@@ -321,7 +321,35 @@ Case study roadmap - Process
 [x] Documentation of any cleaning or manipulation of data
 ```
 ### Analyze
+```{r}
+# Analyze process
 
+# (step 0) import complete manipulated data with read.csv()
+cleanData <- read.csv("C:\\Users\\phatt\\Desktop\\tripdata_202201_to_202306\\cleaning_and_manipulate_data\\cleaning_data_part2.csv")
+
+## (step 1 ) Analyze
+## 1) find the amount of each member type (between member vs casual)
+amount_each_membertype <- cleanData %>% 
+                            select(member_casual) %>%
+                            group_by(member_casual) %>%
+                            summarise(count_member = n())
+
+## result, as shown in the first picture
+cat(paste("Total casual: ", amount_each_membertype$count_member[1], "memberships\nTotal member: ", amount_each_membertype$count_member[2], "memberships"))
+
+## 2) calculate statistical analysis of each member type
+## find min, max, average, median, standard deviation
+cal_each_membertype <- cleanData %>% 
+                          group_by(member_casual) %>%
+                          summarise(min_rider_length = min(rider_length),
+                                    max_rider_length = max(rider_length),
+                                    avg_rider_length = mean(rider_length),
+                                    median_rider_length = median(rider_length),
+                                    sd_rider_length = sd(rider_length))
+
+```
+![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/28d78299-1d9d-49bd-a3b8-4399197013ea)
+![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/b5e42229-5244-438c-a917-859ddf6d7db9)
 
 
 
