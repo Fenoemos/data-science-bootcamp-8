@@ -202,27 +202,60 @@ completed_data <- function(dataset){
 ## use the function
 completed_data(df_bike_unclean)
 ### the result showed in the first picture of this section.
-```
-![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/4f9563b8-c50f-49f5-aac4-45f376ae7bac)
 
-
-```{r}
-# As it showed that Percent exist data: 99.8967756474914 % and "Percent exist data is not 100%, need to clean data"
-# So, other function I created to clean data by omit NULL in dataframe.
-## There are many option to clean like drop, omit, replace, and other,
-## So in this project 'omit' method will be applied to the dataframe.
+## as the result of completed data showed "Percent exist data: 99.8967756474914 %, it is not 100%, so need to clean data" that
+## there were some missing values; however, there are many function in R that can be used to clean the data like drop, omit, replace,
+## and other. In this project, I created to clean data by omit NULL in dataframe.
+## Note: after use this function, the `cleanData` is the dataframe I will work with.
 cleanbyomit <- function(dataset){  
   cleanData <<- dataset %>%         
     na.omit()
   nrowoffulldata <<- dataset %>%  ## used to update nrow of full data after omit
     na.omit() %>%
     nrow()
-  cat(paste("Total data rows before clean:", nrow(dataset),
-            "\nSo, Remaining exist data rows:", as.character(nrowoffulldata)))
+  ## write the result
+  cat(paste("Total data rows before clean:", nrow(dataset), "rows
+            \nSo, Remaining exist data rows:", as.character(nrowoffulldata), "rows"))
 }
 
-# use the function, after this cleanData is the dataframe I will work with.
+## use the function
 cleanbyomit(df_bike_unclean)
+### the result showed in the second picture of this section. now the remaining exist data rows are 8,049,858 rows
+
+## there is another step to be done, it is checking and removing any duplicate records.
+## I created a function that would print whether there are duplicate data or not.
+## Note: after use this function, the `cleanData` is the dataframe I will work with.
+cleanby_remove_duplicate <- function(dataset){  
+  if(nrowoffulldata == nrow(distinct(dataset, .keep_all = TRUE))){
+    print("There is no duplicate record.")
+  }
+  else {
+  print("There is duplicate records.")
+  cleanData <<- dataset %>%         # reassign dataframe to the same variable
+    distinct(.keep_all = TRUE)
+  nrowoffulldata <<- nrow(distinct(dataset, .keep_all = TRUE))  ## used to update nrow of full data after remove duplicate
+  ## write the result
+  cat(paste("Total data rows before clean by remove duplicate:", nrow(dataset), "rows
+            \nSo, Remaining exist data rows:", as.character(nrowoffulldata), "rows"))
+  }
+}
+
+## use the function
+cleanby_remove_duplicate(cleanData)
+### the result showed in the thrid picture of this section. there is no duplicate record in this dataframe.
+
+```
+![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/4f9563b8-c50f-49f5-aac4-45f376ae7bac)
+![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/38a9aacb-531e-430a-ab3d-3ecaa3d8092c)
+![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/1353b927-4ed4-4882-ac0d-3b3ed1d1d71c)
+
+
+
+```{r}
+# As it sho
+
+
+
 ```
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/1c77ff11-b976-4d6c-ac57-bff68bee2a52)
 
