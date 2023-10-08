@@ -97,14 +97,15 @@ Case study roadmap - Prepare (continue)
    The data is open source and provided by the company with their license. Moreover, with the data-privacy,
    the data does not have any personal information.
 5) How did you verify the data's integrity?
-   All 18 files were examined and all of them were consistent in both name of columns and
+   All 18 files were examined and all of them were most consistent in both name of columns and
    data type throughout each file.
 6) How does it help you answer your question?
    These data will be used to examine annual members and casual riders to determine
    if there is any insight behind the riders and bike usage.
 7) Are there any problems with the data?
-   In this stage, I think the data does not have any problems, but it would be great
-   if there are more measurements such as satisfaction.
+   In this stage, I think the data does have some problems like some parts of the information were incomplete.
+   However, these data need to be clean before any future analysis and it would be great if there are more measurements
+   such as user satisfaction.
 
 'Key tasks'
 [x] Download data and store it appropriately
@@ -118,17 +119,11 @@ Case study roadmap - Prepare (continue)
 ### Process
 
 
-
-
-
-
-
-
 ```{text}
 Case study roadmap - Process
 
 'Guiding questing'
-1) Whhat tools are you choosing and why?
+1) What tools are you choosing and why?
 2) Have you ensured your data's integrity?
 3) How can you verify that your data is clean and ready to analyze?
 4) Have you documented your cleaning process so you can review and share those results?
