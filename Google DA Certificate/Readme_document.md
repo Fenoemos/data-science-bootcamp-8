@@ -131,7 +131,7 @@ install.packages("tidyverse")
 library(tidyverse)
 ```
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/004adc7f-beb5-4e1c-827d-a66774f91aab)
-
+***
 
 ```{r}
 # (Step 1) Import each CSV files into R and store it in each dataframe and quick review the data structure of dataframe
@@ -161,11 +161,11 @@ glimpse(list(df2201, df2202, df2203, df2204, df2205, df2206, df2207, df2208
              , df2301, df2302, df2303, df2304, df2305, df2306))
 
 ## The second picture below showed two examples of glimpse() return (df2201 and df2202 data structure) that
- were examined throughout all dataframe which had the same data structure.
+## were examined throughout all dataframe which had the same data structure.
 ```
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/c9969cbe-c2a4-48d3-bb2e-f90774348b50)
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/d3727343-0a83-4029-a92d-e4a12658dfec)
-
+***
 
 ```{r}
 # (Step 2) Combine each dataframe into one dataframe and store it as new dataframe
@@ -173,8 +173,8 @@ glimpse(list(df2201, df2202, df2203, df2204, df2205, df2206, df2207, df2208
 df_bike_unclean <- bind_rows(list(df2201, df2202, df2203, df2204, df2205, df2206, df2207, df2208
                                   , df2209, df2210, df2211, df2212
                                   , df2301, df2302, df2303, df2304, df2305, df2306))
-
-
+## connt total rows in df_bike_unclean
+print
 ```
 
 
