@@ -70,6 +70,7 @@ Case study roadmap - Prepare
 In the trip data, the data stored in separate files for each month (for example, yyyymm-divy-tripdata). After download data to local computer, I stored it within the same folder "tripdata_202201_to_202306", so total files to work with are 18 files. 
 2) How is the data organized?
 For each file, the data contains 13 column consistently as described below.
+```
 | **Column Number** | **Column Name** | **Description** |
 |--------------|-----------|------------|
 | 1      | ride_id  | 5234       |
@@ -88,8 +89,7 @@ For each file, the data contains 13 column consistently as described below.
 
 
 
-
-
+```{text}
 3) Are there issues with bias or credibility in this data? Does your data ROCCC?
 4) How are you addressing licensing, privacy, security, and accessibility?
 5) How did you verify the data's integrity?
