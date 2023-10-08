@@ -244,39 +244,55 @@ cleanby_remove_duplicate <- function(dataset){
 cleanby_remove_duplicate(cleanData)
 ### the result showed in the thrid picture of this section. there is no duplicate record in this dataframe.
 
+## export to csv file as a complete cleaning dataframe
+write.csv(cleanData, file = "cleaning_data_part1.csv", row.names = FALSE)
 ```
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/4f9563b8-c50f-49f5-aac4-45f376ae7bac)
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/38a9aacb-531e-430a-ab3d-3ecaa3d8092c)
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/1353b927-4ed4-4882-ac0d-3b3ed1d1d71c)
-
+***
 
 
 ```{r}
-# As it sho
+# (Step 4) Manipulate data
+## import cleaning data with read.csv()
+cleanData <- read.csv("C:\\Users\\phatt\\Desktop\\tripdata_202201_to_202306\\cleaning_and_manipulate_data\\cleaning_data_part1.csv")
 
+## create new column to be used in deeper cleaning and analyzing
+## `ride_length` by subtracting `start_at` from `ended_at` column (in HH:MM:SS Format)
+## to calculate 'Time Difference' in HH:MM:SS Format, as_hms() function from the hms library will be used
+## Note: the result will be stored as second unit, but show as HH:MM:SS
+install.packages("hms")
+library(hms)
 
+## create new column named `ride_length` within clean dataframe
+cleanData$rider_length <- as_hms(difftime(cleanData$ended_at, cleanData$started_at))
 
+## create new columns by extract `started_at` datatime into each column named below
+cleanData$date <- as.Date(cleanData$started_at)                 #Date data type
+cleanData$month <- format(as.Date(cleanData$date), "%b")        #Character data type
+cleanData$day <- format(as.Date(cleanData$date), "%d")          #Character data type
+cleanData$year <- format(as.Date(cleanData$date), "%Y")         #Character data type
+cleanData$day_of_week <- format(as.Date(cleanData$date), "%A")  #Character data type
+
+## to review created columns
+View(cleanData)
+## the result showed in the first picture of this section.
+
+## Note: when working with datetime, must check if difftime is below zero or not, 
+## or it is less than certain observed values like if it is less than 3 minutes, 
+## the data record will not useful due to user usage time is quite low and seem unrealistic.
+## so, these data need to remove from dataframe
+cleanData <- cleanData[!(as.numeric(cleanData$rider_length) < as.numeric(180)),]
+cat(paste("Total data rows before manipulate:", as.character(nrowoffulldata), "rows.
+          \nTotal remaining exist data rows after clean by remove time below than", round(180/60.0,1) , "minutes: ", nrow(cleanData) ,"rows."))
+## the result showed in the second picture of this section. now the remaining exist data rows are 7,381,001 rows
+
+## export to csv file as a complete manipulated dataframe and it is ready for analysis.
+write.csv(cleanData, file = "cleaning_data_part2.csv", row.names = FALSE)
 ```
-![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/1c77ff11-b976-4d6c-ac57-bff68bee2a52)
-
-```{r}
-# The total data remaining are 8,049,858 rows
-# Next, data manipulate
-## create a column `ride_length` by subtracting the column `started_at` from the column `ended_at` and format as HH:MM:SS
-
-
-
-```
-```{r}
-#
-```
-```{r}
-#
-```
-```{r}
-#
-```
-
+![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/32aab755-041b-45e0-97b3-3d2a53df84c8)
+![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/5ba246b1-2a79-44ac-8772-529234e4b0ea)
 
 
 ```{text}
@@ -287,14 +303,19 @@ Case study roadmap - Process
    In this stage, `Excel` was first used, but it did not work because all the file had more over million rows,
    so 'R' then was used instead to process data before analyzing phase.
 2) Have you ensured your data's integrity?
-3) How can you verify that your data is clean and ready to analyze?
-4) Have you documented your cleaning process so you can review and share those results?
+   I examined both columns' name and data structure before and after any changes that had been made during cleaning and manipulate process.
+3) What steps have you taken to ensure that your data is clean?
+   Missing and duplicate values were removed, and also the time dates data was formatted.
+4) How can you verify that your data is clean and ready to analyze?
+   The processes in this section showed all cleaning and manipulate process to ensure that the data is ready to analyze.
+5) Have you documented your cleaning process so you can review and share those results?
+   The cleaning and manipulate process has been documented above with R-code.
 
 'Key tasks'
-[] Check the data for errors
-[] Choose your tools
-[] Transform the data so you can work with it effectively
-[] Document the cleaning process
+[x] Check the data for errors
+[x] Choose your tools
+[x] Transform the data so you can work with it effectively
+[x] Document the cleaning process
 
 'Deliverable'
 [x] Documentation of any cleaning or manipulation of data
