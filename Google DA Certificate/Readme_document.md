@@ -45,10 +45,11 @@ Case study roadmap - ask
 
 'Guiding questing'
 1) What is the problem you are trying to solve?
-The major goal is to identify the different of annual members and casual riders,
-using the data to develop a marketing plan to help convert casual riders into annual members.
+   The major goal is to identify the different of annual members and casual riders,
+   using the data to develop a marketing plan to help convert casual riders into annual members.
+
 2) How can your insights drive business decisions?
-The marketing team will use the findings to convert and convince casual riders to become more annual members.
+   The marketing team will use the findings to convert and convince casual riders to become more annual members.
 
 'Key tasks'
 [x] Identify the business task
@@ -66,11 +67,11 @@ Case study roadmap - Prepare
 
 'Guiding questing'
 1) Where is your data located?
-In the trip data, the data stored in separate files for each month (for example, yyyymm-divy-tripdata).
-After download data to local computer, I stored it within the same folder "tripdata_202201_to_202306",
-so total files to work with are 18 files. 
+   In the trip data, the data stored in separate files for each month (for example, yyyymm-divy-tripdata).
+   After download data to local computer, I stored it within the same folder "tripdata_202201_to_202306",
+   so total files to work with are 18 files. 
 2) How is the data organized?
-For each file, the data contains 13 column consistently as described below.
+   For each file, the data contains 13 column consistently as described below.
 ```
 | **Column Number** | **Column Name** | **Description** |
 |-------------------|-----------------|-----------------|
@@ -90,20 +91,20 @@ For each file, the data contains 13 column consistently as described below.
 ```{text}
 Case study roadmap - Prepare (continue)
 3) Are there issues with bias or credibility in this data? Does your data ROCCC?
-The data also does `ROCCC` as it is reliable, original, comprehensive, current, and cited
-because the data is first-party data collected by Cyclist and up-to-date.
+   The data also does `ROCCC` as it is reliable, original, comprehensive, current, and cited
+   because the data is first-party data collected by Cyclist and up-to-date.
 4) How are you addressing licensing, privacy, security, and accessibility?
-The data is open source and provided by the company with their license. Moreover, with the data-privacy,
-the data does not have any personal information.
+   The data is open source and provided by the company with their license. Moreover, with the data-privacy,
+   the data does not have any personal information.
 5) How did you verify the data's integrity?
-All 18 files were examined and all of them were consistent in both name of columns and
-data type throughout each file.
+   All 18 files were examined and all of them were consistent in both name of columns and
+   data type throughout each file.
 6) How does it help you answer your question?
-These data will be used to examine annual members and casual riders to determine
-if there is any insight behind the riders and bike usage.
+   These data will be used to examine annual members and casual riders to determine
+   if there is any insight behind the riders and bike usage.
 7) Are there any problems with the data?
-In this stage, I think the data does not have any problems, but it would be great
-if there are more measurements such as satisfaction.
+   In this stage, I think the data does not have any problems, but it would be great
+   if there are more measurements such as satisfaction.
 
 'Key tasks'
 [x] Download data and store it appropriately
