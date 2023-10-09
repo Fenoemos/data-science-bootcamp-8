@@ -346,10 +346,12 @@ cal_each_membertype <- cleanData %>%
                                     avg_rider_length = mean(rider_length),
                                     median_rider_length = median(rider_length),
                                     sd_rider_length = sd(rider_length))
+## result, as shown in the second picture
 
 ```
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/28d78299-1d9d-49bd-a3b8-4399197013ea)
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/b5e42229-5244-438c-a917-859ddf6d7db9)
+
 
 
 
