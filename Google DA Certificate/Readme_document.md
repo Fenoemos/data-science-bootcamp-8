@@ -352,15 +352,17 @@ amount_each_membertype <- cleanData %>%
 cat(paste("Total casual: ", amount_each_membertype$count_member[1], "memberships\nTotal member: ", amount_each_membertype$count_member[2], "memberships"))
 
 ## 2) calculate statistical analysis of each member type
-## find total, min, max, average, median, mode, standard deviation
+## find count, total, min, max, average, median, mode, standard deviation
 cal_each_membertype <- cleanData %>% 
                           group_by(member_casual) %>%
-                          summarise(sum_rider_length = as_hms(as.numeric(sum(rider_length))),
-                                    min_rider_length = as_hms(as.numeric(min(rider_length))),
-                                    max_rider_length = as_hms(as.numeric(max(rider_length))),
-                                    avg_rider_length = as_hms(as.numeric(mean(rider_length))),
-                                    median_rider_length = as_hms(as.numeric(median(rider_length))),
-                                    sd_rider_length = as_hms(as.numeric(sd(rider_length))))
+                          summarise(sum_ride_length = as_hms(as.numeric(sum(rider_length))),
+                                    min_ride_length = as_hms(as.numeric(min(rider_length))),
+                                    max_ride_length = as_hms(as.numeric(max(rider_length))),
+                                    avg_ride_length = as_hms(as.numeric(mean(rider_length))),
+                                    median_ride_length = as_hms(as.numeric(median(rider_length))),
+                                    sd_ride_length = as_hms(as.numeric(sd(rider_length))),
+                                    count_ride = n())
+
 ## to find mode, use mlv() function in `modeest` packages
 install.packages('modeest') 
 library(modeest)
@@ -384,23 +386,26 @@ find_mode()
 
 ## summary result
 cat(paste(
-  "All units are in 'hours : minutes : seconds', except for `mode`\n
-  Casual: 
-      total rider time: ", cal_each_membertype$sum_rider_length[1], "
-      minimum rider time:", cal_each_membertype$min_rider_length[1], "
-      maximum rider time:", cal_each_membertype$max_rider_length[1], "
-      average rider time:", cal_each_membertype$avg_rider_length[1], "
-      median rider time:", cal_each_membertype$median_rider_length[1], "
+  "All time units are in 'hours : minutes : seconds'
+  Casual:
+      total user: ", cal_each_membertype$count_ride[1], "users
+      total ride time: ", cal_each_membertype$sum_ride_length[1], "
+      shortest ride time:", cal_each_membertype$min_ride_length[1], "
+      longest ride time:", cal_each_membertype$max_ride_length[1], "
+      average ride time:", cal_each_membertype$avg_ride_length[1], "
+      median ride time:", cal_each_membertype$median_ride_length[1], "
       mode (popular day of week):", mode_causal, "
-      standard deviation rider time:", cal_each_membertype$median_rider_length[1], "
+      standard deviation ride time:", cal_each_membertype$median_ride_length[1], "
   Member: 
-      total rider time: ", cal_each_membertype$sum_rider_length[2], "
-      minimum rider time:", cal_each_membertype$min_rider_length[2], "
-      maximum rider time:", cal_each_membertype$max_rider_length[2], "
-      average rider time:", cal_each_membertype$avg_rider_length[2], "
-      median rider time:", cal_each_membertype$median_rider_length[2], "
+      total user: ", cal_each_membertype$count_ride[2], "users
+      total ride time: ", cal_each_membertype$sum_ride_length[2], "
+      shortest ride time:", cal_each_membertype$min_ride_length[2], "
+      longest ride time:", cal_each_membertype$max_ride_length[2], "
+      average ride time:", cal_each_membertype$avg_ride_length[2], "
+      median ride time:", cal_each_membertype$median_ride_length[2], "
       mode (popular day of week):", mode_member, "
-      standard deviation rider time:", cal_each_membertype$median_rider_length[2]))
+      standard deviation ride time:", cal_each_membertype$median_ride_length[2]))
+
 ## result, as shown in the fourth picture
 ```
 Before export
@@ -409,7 +414,8 @@ After import again
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/e0aa81d7-8b88-4e1b-89a5-c09181478919)
 
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/28d78299-1d9d-49bd-a3b8-4399197013ea)
-![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/20190303-9c09-4c7b-b214-f12e81121600)
+![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/d2a0f3cf-4b09-4136-9333-b6ad0d5b5ab4)
+
 
 
 ```{text}
