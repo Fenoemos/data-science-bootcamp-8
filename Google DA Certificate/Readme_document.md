@@ -246,6 +246,7 @@ cleanby_remove_duplicate(cleanData)
 
 ## export to csv file as a complete cleaning dataframe
 write.csv(cleanData, file = "cleaning_data_part1.csv", row.names = FALSE)
+## Note: Any export or import dataframe, data structure of some columns may change. Do not forget to check it.
 ```
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/4f9563b8-c50f-49f5-aac4-45f376ae7bac)
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/38a9aacb-531e-430a-ab3d-3ecaa3d8092c)
@@ -290,6 +291,7 @@ cat(paste("Total data rows before manipulate:", as.character(nrowoffulldata), "r
 
 ## export to csv file as a complete manipulated dataframe and it is ready for analysis.
 write.csv(cleanData, file = "cleaning_data_part2.csv", row.names = FALSE)
+## Note: Any export or import dataframe, data structure of some columns may change. Do not forget to check it.
 ```
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/32aab755-041b-45e0-97b3-3d2a53df84c8)
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/5ba246b1-2a79-44ac-8772-529234e4b0ea)
@@ -326,6 +328,21 @@ Case study roadmap - Process
 
 # (step 0) import complete manipulated data with read.csv()
 cleanData <- read.csv("C:\\Users\\phatt\\Desktop\\tripdata_202201_to_202306\\cleaning_and_manipulate_data\\cleaning_data_part2.csv")
+## after loading complete manipulated data into R again, it need to be checked data structure again
+## because data structure of some data type may change during exporting file
+str(cleanData)
+## the first and second picture showed that there are some data structure have changed
+## before analyze let change to original data structure
+
+
+
+
+
+
+[will do this part again tomorrow]
+
+
+
 
 ## (step 1 ) Analyze
 ## 1) find the amount of each member type (between member vs casual)
@@ -334,7 +351,7 @@ amount_each_membertype <- cleanData %>%
                             group_by(member_casual) %>%
                             summarise(count_member = n())
 
-## result, as shown in the first picture
+## result, as shown in the thrid picture
 cat(paste("Total casual: ", amount_each_membertype$count_member[1], "memberships\nTotal member: ", amount_each_membertype$count_member[2], "memberships"))
 
 ## 2) calculate statistical analysis of each member type
@@ -346,9 +363,14 @@ cal_each_membertype <- cleanData %>%
                                     avg_rider_length = mean(rider_length),
                                     median_rider_length = median(rider_length),
                                     sd_rider_length = sd(rider_length))
-## result, as shown in the second picture
+## result, as shown in the fourth picture
 
 ```
+Before export
+![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/3488e59e-53f8-42b5-a5bb-07db5cdd5b0c)
+After import again
+![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/e0aa81d7-8b88-4e1b-89a5-c09181478919)
+
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/28d78299-1d9d-49bd-a3b8-4399197013ea)
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/b5e42229-5244-438c-a917-859ddf6d7db9)
 
