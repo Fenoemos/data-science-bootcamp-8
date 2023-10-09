@@ -358,11 +358,12 @@ cat(paste("Total casual: ", amount_each_membertype$count_member[1], "memberships
 ## find min, max, average, median, standard deviation
 cal_each_membertype <- cleanData %>% 
                           group_by(member_casual) %>%
-                          summarise(min_rider_length = min(rider_length),
+                          summarise(sum_rider_length = sum(rider_length),
+                                    min_rider_length = min(rider_length),
                                     max_rider_length = max(rider_length),
                                     avg_rider_length = mean(rider_length),
                                     median_rider_length = median(rider_length),
-                                    sd_rider_length = sd(rider_length))
+                                    sd_rider_length = sd(rider_length)) 
 ## result, as shown in the fourth picture
 
 ```
