@@ -323,9 +323,8 @@ Case study roadmap - Process
 [x] Documentation of any cleaning or manipulation of data
 ```
 ### Analyze
+#### Documentation of Analyze process
 ```{r}
-# Analyze process
-
 # (step 0) import complete manipulated data with read.csv()
 cleanData <- read.csv("C:\\Users\\phatt\\Desktop\\tripdata_202201_to_202306\\cleaning_and_manipulate_data\\cleaning_data_part2.csv")
 
@@ -342,16 +341,8 @@ cleanData$year <- as.character(cleanData$year)
 cleanData$date <- as.Date.character(cleanData$date)
 cleanData$rider_length <- as_hms(difftime(cleanData$ended_at, cleanData$started_at))
 
-## 1) find the amount of each member type (between member vs casual)
-amount_each_membertype <- cleanData %>% 
-                            select(member_casual) %>%
-                            group_by(member_casual) %>%
-                            summarise(count_member = n())
-
-## result, as shown in the thrid picture
-cat(paste("Total casual: ", amount_each_membertype$count_member[1], "memberships\nTotal member: ", amount_each_membertype$count_member[2], "memberships"))
-
-## 2) calculate statistical analysis of each member type
+## (step 1 - analyze) find differences between member tpye (member vs casual) 
+## calculate statistical analysis of each member type
 ## find count, total, min, max, average, median, mode, standard deviation
 cal_each_membertype <- cleanData %>% 
                           group_by(member_casual) %>%
@@ -405,17 +396,14 @@ cat(paste(
       median ride time:", cal_each_membertype$median_ride_length[2], "
       mode (popular day of week):", mode_member, "
       standard deviation ride time:", cal_each_membertype$median_ride_length[2]))
-
-## result, as shown in the fourth picture
+## result, as shown in the thrid picture
 ```
 Before export
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/3488e59e-53f8-42b5-a5bb-07db5cdd5b0c)
 After import again
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/e0aa81d7-8b88-4e1b-89a5-c09181478919)
 
-![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/28d78299-1d9d-49bd-a3b8-4399197013ea)
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/d2a0f3cf-4b09-4136-9333-b6ad0d5b5ab4)
-
 
 
 ```{text}
@@ -423,19 +411,28 @@ Case study roadmap - Analyze
 
 'Guiding questing'
 1) How should you organize your data to perform analysis on it?
+   I should split data into two groups by its member type because the main question is how different between two groups of member.
 2) Has your data been properly formatted?
+   Yes, my data had been properly formatted as showed in the document that every step has rechecked like its data structure or its performance.
 3) What surprises did you discover in the data?
+   There was a surprise that even causal users had a number of membership lower than member users,
+   but they spent time with riding more than member users (~10 minutes).
 4) What trends or relationships did you find in the data?
+   From the data itself, each type of member had their own need like popular day of week, causal user perfers to ride
+   on saturday and member user perfers to ride on thrusday. Moreover, causal users counted as only 60% of member users,
+   they spent time to ride more than member users.
 5) How will these insights help answer your business questions?
+   This insight will help to answer business questions by providing my team with relevant data, analysis and recommendations
+   based on how they ride diffenently. This will lead marketing team to better understand of user.
 
 'Key tasks'
-[] Aggregate your data so it's useful and accessible
-[] Organize and format your data
-[] Perform calculations
-[] Identify trends and relationships
+[x] Aggregate your data so it's useful and accessible
+[x] Organize and format your data
+[x] Perform calculations
+[x] Identify trends and relationships
 
 'Deliverable'
-[] A summary of your analysis
+[x] A summary of your analysis
 ```
 ### Share
 
