@@ -328,23 +328,20 @@ Case study roadmap - Process
 
 # (step 0) import complete manipulated data with read.csv()
 cleanData <- read.csv("C:\\Users\\phatt\\Desktop\\tripdata_202201_to_202306\\cleaning_and_manipulate_data\\cleaning_data_part2.csv")
+
 ## after loading complete manipulated data into R again, it need to be checked data structure again
 ## because data structure of some data type may change during exporting file
 str(cleanData)
 ## the first and second picture showed that there are some data structure have changed
 ## before analyze let change to original data structure
 
+## the first and second picture showed that there are some data structure have changed
+## before analyze let change to original data structure
+cleanData$day <- as.character(cleanData$day)
+cleanData$year <- as.character(cleanData$year)
+cleanData$date <- as.Date.character(cleanData$date)
+cleanData$rider_length <- as_hms(difftime(cleanData$ended_at, cleanData$started_at))
 
-
-
-
-
-[will do this part again tomorrow]
-
-
-
-
-## (step 1 ) Analyze
 ## 1) find the amount of each member type (between member vs casual)
 amount_each_membertype <- cleanData %>% 
                             select(member_casual) %>%
@@ -355,17 +352,56 @@ amount_each_membertype <- cleanData %>%
 cat(paste("Total casual: ", amount_each_membertype$count_member[1], "memberships\nTotal member: ", amount_each_membertype$count_member[2], "memberships"))
 
 ## 2) calculate statistical analysis of each member type
-## find min, max, average, median, standard deviation
+## find total, min, max, average, median, mode, standard deviation
 cal_each_membertype <- cleanData %>% 
                           group_by(member_casual) %>%
-                          summarise(sum_rider_length = sum(rider_length),
-                                    min_rider_length = min(rider_length),
-                                    max_rider_length = max(rider_length),
-                                    avg_rider_length = mean(rider_length),
-                                    median_rider_length = median(rider_length),
-                                    sd_rider_length = sd(rider_length)) 
-## result, as shown in the fourth picture
+                          summarise(sum_rider_length = as_hms(as.numeric(sum(rider_length))),
+                                    min_rider_length = as_hms(as.numeric(min(rider_length))),
+                                    max_rider_length = as_hms(as.numeric(max(rider_length))),
+                                    avg_rider_length = as_hms(as.numeric(mean(rider_length))),
+                                    median_rider_length = as_hms(as.numeric(median(rider_length))),
+                                    sd_rider_length = as_hms(as.numeric(sd(rider_length))))
+## to find mode, use mlv() function in `modeest` packages
+install.packages('modeest') 
+library(modeest)
 
+## function to find mode
+find_mode <- function(){
+  ## filter into each group and find mode (popular day of week) in each group
+  filter_only_casual <<- cleanData %>%
+    filter(cleanData$member_casual == 'casual')
+  filter_only_member <<- cleanData %>%
+    filter(cleanData$member_casual == 'member')
+  mode_causal <<- mlv(filter_only_casual$day_of_week)
+  mode_member <<- mlv(filter_only_member$day_of_week)
+  cat(paste("Popular day of week:
+    mode of causal: ", mode_causal, "
+    mode of member: ", mode_member))
+}
+
+## use function
+find_mode()
+
+## summary result
+cat(paste(
+  "All units are in 'hours : minutes : seconds', except for `mode`\n
+  Casual: 
+      total rider time: ", cal_each_membertype$sum_rider_length[1], "
+      minimum rider time:", cal_each_membertype$min_rider_length[1], "
+      maximum rider time:", cal_each_membertype$max_rider_length[1], "
+      average rider time:", cal_each_membertype$avg_rider_length[1], "
+      median rider time:", cal_each_membertype$median_rider_length[1], "
+      mode (popular day of week):", mode_causal, "
+      standard deviation rider time:", cal_each_membertype$median_rider_length[1], "
+  Member: 
+      total rider time: ", cal_each_membertype$sum_rider_length[2], "
+      minimum rider time:", cal_each_membertype$min_rider_length[2], "
+      maximum rider time:", cal_each_membertype$max_rider_length[2], "
+      average rider time:", cal_each_membertype$avg_rider_length[2], "
+      median rider time:", cal_each_membertype$median_rider_length[2], "
+      mode (popular day of week):", mode_member, "
+      standard deviation rider time:", cal_each_membertype$median_rider_length[2]))
+## result, as shown in the fourth picture
 ```
 Before export
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/3488e59e-53f8-42b5-a5bb-07db5cdd5b0c)
@@ -373,13 +409,7 @@ After import again
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/e0aa81d7-8b88-4e1b-89a5-c09181478919)
 
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/28d78299-1d9d-49bd-a3b8-4399197013ea)
-![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/b5e42229-5244-438c-a917-859ddf6d7db9)
-
-
-
-
-
-
+![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/20190303-9c09-4c7b-b214-f12e81121600)
 
 
 ```{text}
