@@ -434,7 +434,7 @@ Case study roadmap - Analyze
 'Deliverable'
 [x] A summary of your analysis
 ```
-### [Notyet] Share
+### [doing] Share
 
 
 
