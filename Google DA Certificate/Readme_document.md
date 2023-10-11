@@ -308,13 +308,13 @@ view_percentage()
 ##       so, these data need to remove from dataframe.
 
 ## to remove data below than zero
-cleanData <- cleanData[!(as.numeric(cleanData$rider_length) < as.numeric(0)),]
+cleanData <- cleanData[!(as.numeric(cleanData$rider_length) <= as.numeric(133)),] # 2 min 13 sec equal to 133 sec
 
 ## to remove data higher than usual
 cleanData <- cleanData[!(as.numeric(cleanData$rider_length) >= as.numeric(2610)),] # 43min 30 sec equal to 2,610 sec
 
-## remian rows, now the remaining exist data rows are 7,647,191 rows
-cat(paste("Total remaining exist data rows are ", nrow(cleanData) ,"rows after clean\nby remove ride time below than", round(180/60.0,1) , "and ride time higher than 43 mintues 30 seconds"))
+## remian rows, now the remaining exist data rows are 7,242,302 rows
+cat(paste("Total remaining exist data rows are ", nrow(cleanData) ,"rows after clean\nby remove ride time below than 2 mintues 13 seconds and ride time higher than 43 mintues 30 seconds"))
 
 ## to review percentage again, there is no extreme outliers.
 view_percentage()
@@ -338,7 +338,8 @@ write.csv(cleanData, file = "cleaning_data_part2.csv", row.names = FALSE)
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/32aab755-041b-45e0-97b3-3d2a53df84c8)
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/5235d082-457b-48c9-abc3-0f97f3c8aff4)
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/22612916-db62-45c1-a830-19adb15b927b)
-![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/f82b1164-a75e-4f36-ba3a-674c0bad9911)
+![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/7296a1f7-59bf-48dd-b0dc-e38ff76bf47c)
+
 
 
 ```{text}
