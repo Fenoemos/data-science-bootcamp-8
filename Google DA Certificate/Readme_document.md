@@ -303,11 +303,11 @@ view_percentage <- function(){
 view_percentage()
 ## Both boxplot and percentage showed that second and thrid picture
 
-## Note: I noticed that there were outliers in the data, such as ride time is below than zero
-##       and higher than usual, these record lead the data will not useful due to unrealistic data
+## Note: I noticed that there were outliers in the data, such as ride time is below than zero or too lower
+##       and too higher than usual, these record lead the data will not useful due to unrealistic data
 ##       so, these data need to remove from dataframe.
 
-## to remove data below than zero
+## to remove data too lower than usual by filter at percentage 5%
 cleanData <- cleanData[!(as.numeric(cleanData$rider_length) <= as.numeric(133)),] # 2 min 13 sec equal to 133 sec
 
 ## to remove data higher than usual
