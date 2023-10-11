@@ -447,7 +447,8 @@ Before export
 After import again
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/e0aa81d7-8b88-4e1b-89a5-c09181478919)
 
-![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/d2a0f3cf-4b09-4136-9333-b6ad0d5b5ab4)
+![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/89a1d82a-126b-4a71-b2b2-1099a8ad752a)
+
 
 
 ```{text}
