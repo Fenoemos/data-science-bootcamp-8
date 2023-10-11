@@ -259,6 +259,40 @@ write.csv(cleanData, file = "cleaning_data_part1.csv", row.names = FALSE)
 ## import cleaning data with read.csv()
 cleanData <- read.csv("C:\\Users\\phatt\\Desktop\\tripdata_202201_to_202306\\cleaning_and_manipulate_data\\cleaning_data_part1.csv")
 
+## find and remove outliers
+ggplot(data = cleanData, mapping = aes(x = member_casual, y = rider_length)) + 
+  geom_boxplot() +
+  theme_minimal() + 
+  labs(title="Boxplot: Distribution of ride time in each membership type (data may include outliers)",
+       subtitle = "during January 2022 and June 2023",
+       x="Membership type",
+       y="Ride time, hours : minutes : seconds",
+       caption = "Resource: Motivate International Inc.") + 
+  guides(fill = "none")
+
+## find percentage
+view_percentage <- function(){
+  percentage <- quantile(cleanData$rider_length, probs = seq(0, 1, 1/20))
+  for (i in 1:21){
+    cat(paste("\nPercentage:", (as.double(i)*5)-5, ", ride time ", percentage[i]))
+  }
+}
+
+## to review precentage
+view_percentage()
+## Both boxplot and percentage showed that first picture
+
+
+
+
+
+
+
+
+
+
+
+
 ## create new column to be used in deeper cleaning and analyzing
 ## `ride_length` by subtracting `start_at` from `ended_at` column (in HH:MM:SS Format)
 ## to calculate 'Time Difference' in HH:MM:SS Format, as_hms() function from the hms library will be used
@@ -278,7 +312,7 @@ cleanData$day_of_week <- format(as.Date(cleanData$date), "%A")  #Character data 
 
 ## to review created columns
 View(cleanData)
-## the result showed in the first picture of this section.
+## the result showed in the [xxxxxxxxxxxxxxxxxxxxxxxxxx] picture of this section.
 
 ## Note: when working with datetime, must check if difftime is below zero or not, 
 ## or it is less than certain observed values like if it is less than 3 minutes, 
@@ -287,12 +321,17 @@ View(cleanData)
 cleanData <- cleanData[!(as.numeric(cleanData$rider_length) < as.numeric(180)),]
 cat(paste("Total data rows before manipulate:", as.character(nrowoffulldata), "rows.
           \nTotal remaining exist data rows after clean by remove time below than", round(180/60.0,1) , "minutes: ", nrow(cleanData) ,"rows."))
-## the result showed in the second picture of this section. now the remaining exist data rows are 7,381,001 rows
+## the result showed in the [xxxxxxxxxxxxxxxxxxxxxxxxxx] picture of this section. now the remaining exist data rows are 7,381,001 rows
 
 ## export to csv file as a complete manipulated dataframe and it is ready for analysis.
 write.csv(cleanData, file = "cleaning_data_part2.csv", row.names = FALSE)
 ## Note: Any export or import dataframe, data structure of some columns may change. Do not forget to check it.
 ```
+![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/d5f9a133-9d27-4d07-843a-562b7af57775)
+
+
+
+
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/32aab755-041b-45e0-97b3-3d2a53df84c8)
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/5ba246b1-2a79-44ac-8772-529234e4b0ea)
 
