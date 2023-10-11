@@ -259,6 +259,27 @@ write.csv(cleanData, file = "cleaning_data_part1.csv", row.names = FALSE)
 ## import cleaning data with read.csv()
 cleanData <- read.csv("C:\\Users\\phatt\\Desktop\\tripdata_202201_to_202306\\cleaning_and_manipulate_data\\cleaning_data_part1.csv")
 
+## create new column to be used in deeper cleaning and analyzing
+## `ride_length` by subtracting `start_at` from `ended_at` column (in HH:MM:SS Format)
+## to calculate 'Time Difference' in HH:MM:SS Format, as_hms() function from the hms library will be used
+## Note: the result will be stored as second unit, but show as HH:MM:SS
+install.packages("hms")
+library(hms)
+
+## create new column named `ride_length` within clean dataframe
+cleanData$rider_length <- as_hms(difftime(cleanData$ended_at, cleanData$started_at))
+
+## create new columns by extract `started_at` datatime into each column named below
+cleanData$date <- as.Date(cleanData$started_at)                 #Date data type
+cleanData$month <- format(as.Date(cleanData$date), "%b")        #Character data type
+cleanData$day <- format(as.Date(cleanData$date), "%d")          #Character data type
+cleanData$year <- format(as.Date(cleanData$date), "%Y")         #Character data type
+cleanData$day_of_week <- format(as.Date(cleanData$date), "%A")  #Character data type
+
+## to review created columns
+View(cleanData)
+## the result showed in the first picture of this section.
+
 ## find and remove outliers
 ggplot(data = cleanData, mapping = aes(x = member_casual, y = rider_length)) + 
   geom_boxplot() +
@@ -280,60 +301,44 @@ view_percentage <- function(){
 
 ## to review precentage
 view_percentage()
-## Both boxplot and percentage showed that first picture
+## Both boxplot and percentage showed that second and thrid picture
 
+## Note: I noticed that there were outliers in the data, such as ride time is below than zero
+##       and higher than usual, these record lead the data will not useful due to unrealistic data
+##       so, these data need to remove from dataframe.
 
+## to remove data below than zero
+cleanData <- cleanData[!(as.numeric(cleanData$rider_length) < as.numeric(0)),]
 
+## to remove data higher than usual
+cleanData <- cleanData[!(as.numeric(cleanData$rider_length) >= as.numeric(2610)),] # 43min 30 sec equal to 2,610 sec
 
+## remian rows, now the remaining exist data rows are 7,647,191 rows
+cat(paste("Total remaining exist data rows are ", nrow(cleanData) ,"rows after clean\nby remove ride time below than", round(180/60.0,1) , "and ride time higher than 43 mintues 30 seconds"))
 
+## to review percentage again, there is no extreme outliers.
+view_percentage()
 
-
-
-
-
-
-
-## create new column to be used in deeper cleaning and analyzing
-## `ride_length` by subtracting `start_at` from `ended_at` column (in HH:MM:SS Format)
-## to calculate 'Time Difference' in HH:MM:SS Format, as_hms() function from the hms library will be used
-## Note: the result will be stored as second unit, but show as HH:MM:SS
-install.packages("hms")
-library(hms)
-
-## create new column named `ride_length` within clean dataframe
-cleanData$rider_length <- as_hms(difftime(cleanData$ended_at, cleanData$started_at))
-
-## create new columns by extract `started_at` datatime into each column named below
-cleanData$date <- as.Date(cleanData$started_at)                 #Date data type
-cleanData$month <- format(as.Date(cleanData$date), "%b")        #Character data type
-cleanData$day <- format(as.Date(cleanData$date), "%d")          #Character data type
-cleanData$year <- format(as.Date(cleanData$date), "%Y")         #Character data type
-cleanData$day_of_week <- format(as.Date(cleanData$date), "%A")  #Character data type
-
-## to review created columns
-View(cleanData)
-## the result showed in the [xxxxxxxxxxxxxxxxxxxxxxxxxx] picture of this section.
-
-## Note: when working with datetime, must check if difftime is below zero or not, 
-## or it is less than certain observed values like if it is less than 3 minutes, 
-## the data record will not useful due to user usage time is quite low and seem unrealistic.
-## so, these data need to remove from dataframe
-cleanData <- cleanData[!(as.numeric(cleanData$rider_length) < as.numeric(180)),]
-cat(paste("Total data rows before manipulate:", as.character(nrowoffulldata), "rows.
-          \nTotal remaining exist data rows after clean by remove time below than", round(180/60.0,1) , "minutes: ", nrow(cleanData) ,"rows."))
-## the result showed in the [xxxxxxxxxxxxxxxxxxxxxxxxxx] picture of this section. now the remaining exist data rows are 7,381,001 rows
+## Boxplot: Distribution of ride time in each membership type (removed outliers)
+ggplot(data = cleanData, mapping = aes(x = member_casual, y = rider_length)) + 
+  geom_boxplot() +
+  theme_minimal() + 
+  labs(title="Boxplot: Distribution of ride time in each membership type (removed outliers)",
+       subtitle = "during January 2022 and June 2023",
+       x="Membership type",
+       y="ride time, hours : minutes : seconds",
+       caption = "Resource: Motivate International Inc.") + 
+  guides(fill = "none")
+## the result showed in the fourth picture of this section.
 
 ## export to csv file as a complete manipulated dataframe and it is ready for analysis.
 write.csv(cleanData, file = "cleaning_data_part2.csv", row.names = FALSE)
 ## Note: Any export or import dataframe, data structure of some columns may change. Do not forget to check it.
 ```
-![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/d5f9a133-9d27-4d07-843a-562b7af57775)
-
-
-
-
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/32aab755-041b-45e0-97b3-3d2a53df84c8)
-![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/5ba246b1-2a79-44ac-8772-529234e4b0ea)
+![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/5235d082-457b-48c9-abc3-0f97f3c8aff4)
+![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/22612916-db62-45c1-a830-19adb15b927b)
+![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/f82b1164-a75e-4f36-ba3a-674c0bad9911)
 
 
 ```{text}
