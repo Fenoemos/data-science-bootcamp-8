@@ -537,7 +537,7 @@ cleanData %>%
 
 
 # Which day in a week did each type of user prefer to ride?
-# Chart 2 - Average ride time based on their membership type during a week, showed in the thrid picture
+# Chart 2 - Average ride time based on their membership type during a week, showed in the third picture
 cleanData %>% 
   group_by(member_casual, day_of_week) %>% 
   summarise(number_of_riders = n(), 
@@ -625,10 +625,10 @@ cleanData %>%
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/1f8c2a81-8f24-4c74-a639-ef2e6f71fe31)
 ##### The second picture, chart 1.1 - Total number of user based on their membership type by month.
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/97086a11-b23b-456c-bb30-aaa4db074265)
-##### The thrid picture, chart 2 - Average ride time based on their membership type during a week.
+##### The third picture, chart 2 - Average ride time based on their membership type during a week.
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/ccf7a4a3-915d-4ab1-868b-1c98fb2bd82f)
-##### The fourth picture, chart 2.1 - Average ride time based on their membership type during a year. [New run]
-![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/22ecdc36-df06-45fc-b9cd-1b8f4ba36423)
+##### The fourth picture, chart 2.1 - Average ride time based on their membership type during a year.
+![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/857b51e0-4ff2-4307-bb2d-531d26b64142)
 ##### The fifth picture, chart 3 - Percent of user based on their membership type.
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/9a7d9252-6273-430f-b73e-989dd5f35009)
 ##### The sixth picture, chart 4 - Percent of user based on their membership type in each type of bike.
