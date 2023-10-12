@@ -160,8 +160,9 @@ glimpse(list(df2201, df2202, df2203, df2204, df2205, df2206, df2207, df2208
 ## The second picture below showed two examples of glimpse() return (df2201 and df2202 data structure) that
 ## were examined throughout all dataframe which had the same data structure.
 ```
-#### The first picture, showed 
+#### The first picture showed dataframe in R after import CSV files
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/c9969cbe-c2a4-48d3-bb2e-f90774348b50)
+#### The second picture showed an example of dataframe structure in R
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/d3727343-0a83-4029-a92d-e4a12658dfec)
 ***
 
@@ -173,8 +174,9 @@ df_bike_unclean <- bind_rows(list(df2201, df2202, df2203, df2204, df2205, df2206
                                   , df2301, df2302, df2303, df2304, df2305, df2306))
 ## count total rows in df_bike_unclean
 cat(paste("Total row in unclean dataframe:", nrow(df_bike_unclean), "rows \n"))
-### the result showed that there are 8,058,176 rows in the original files.
+### The result showed that there are 8,058,176 rows in the original files.
 ```
+#### The picture showed result after combined 18 dataframe into one dataframe
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/e3937c4d-7fdb-4535-acec-866d4fbd412b)
 ***
 
@@ -246,8 +248,11 @@ cleanby_remove_duplicate(cleanData)
 write.csv(cleanData, file = "cleaning_data_part1.csv", row.names = FALSE)
 ## Note: Any export or import dataframe, data structure of some columns may change. Do not forget to check it.
 ```
+#### The first 
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/4f9563b8-c50f-49f5-aac4-45f376ae7bac)
+#### The second
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/38a9aacb-531e-430a-ab3d-3ecaa3d8092c)
+#### The third
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/1353b927-4ed4-4882-ac0d-3b3ed1d1d71c)
 ***
 
