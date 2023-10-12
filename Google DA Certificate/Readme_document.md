@@ -304,7 +304,7 @@ view_percentage <- function(){
 
 ## to review precentage
 view_percentage()
-## Both boxplot and percentage showed that second and thrid picture
+## Both boxplot and percentage showed in the second and third picture
 
 ## Note: I noticed that there were outliers in the data, such as ride time is below than zero or too lower
 ##       and too higher than usual, these record lead the data will not useful due to unrealistic data
@@ -447,14 +447,13 @@ cat(paste(
       median ride time:", cal_each_membertype$median_ride_length[2], "
       mode (popular day of week):", mode_member, "
       standard deviation ride time:", cal_each_membertype$median_ride_length[2]))
-## result, as shown in the thrid picture
+## result, as shown in the third picture
 ```
-Before export
+#### The first picture showed the dataframe structure before export to CSV file.
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/1506a744-c671-4d81-8259-9570b3a81948)
-
-After import again
+#### The second picture showed the dataframe structure after import the CSV file into R.
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/1260b71a-6596-4d86-938e-30d1248ddeb4)
-
+#### The third picture showed the preliminary summary by basic statistic.
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/2441fee0-719d-4ca5-898d-693fcc5ae0ac)
 
 
@@ -561,7 +560,7 @@ cleanData %>%
   geom_col(position = "dodge") +
   theme_minimal() +
   scale_fill_brewer(palette = "Blues") +
-  labs(title="Chart 2 - Average ride time based on their membership type during a year",
+  labs(title="Chart 2.1 - Average ride time based on their membership type during a year",
        x="Day of week",
        y="Average ride time, minutes",
        caption = "Resource: Motivate International Inc.") + 
@@ -622,19 +621,19 @@ cleanData %>%
 
 ```
 #### Visual in this section
-##### The first picture
+##### The first picture, chart 1 - Total number user based on their membership type.
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/1f8c2a81-8f24-4c74-a639-ef2e6f71fe31)
-##### The second picture
+##### The second picture, chart 1.1 - Total number of user based on their membership type by month.
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/97086a11-b23b-456c-bb30-aaa4db074265)
-##### The thrid picture
+##### The thrid picture, chart 2 - Average ride time based on their membership type during a week.
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/ccf7a4a3-915d-4ab1-868b-1c98fb2bd82f)
-##### the fourth picture
+##### The fourth picture, chart 2.1 - Average ride time based on their membership type during a year. [New run]
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/22ecdc36-df06-45fc-b9cd-1b8f4ba36423)
-##### the fifth picture
+##### The fifth picture, chart 3 - Percent of user based on their membership type.
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/9a7d9252-6273-430f-b73e-989dd5f35009)
-##### the sixth picture
+##### The sixth picture, chart 4 - Percent of user based on their membership type in each type of bike.
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/cdf551a3-44f3-4164-b727-3759fe8a6cef)
-##### the seventh picture
+##### The seventh picture, chart 5 - Trend of bike ride in a day based on their membership type.
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/da78292a-8aee-4ca6-8e50-07defa9910a1)
 
 
