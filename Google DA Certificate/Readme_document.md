@@ -338,8 +338,7 @@ write.csv(cleanData, file = "cleaning_data_part2.csv", row.names = FALSE)
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/32aab755-041b-45e0-97b3-3d2a53df84c8)
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/5235d082-457b-48c9-abc3-0f97f3c8aff4)
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/22612916-db62-45c1-a830-19adb15b927b)
-![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/7296a1f7-59bf-48dd-b0dc-e38ff76bf47c)
-
+![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/ff9920f9-d453-4f1d-a700-cbfb8a97331d)
 
 
 ```{text}
@@ -444,12 +443,12 @@ cat(paste(
 ## result, as shown in the thrid picture
 ```
 Before export
-![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/3488e59e-53f8-42b5-a5bb-07db5cdd5b0c)
+![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/1506a744-c671-4d81-8259-9570b3a81948)
+
 After import again
-![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/e0aa81d7-8b88-4e1b-89a5-c09181478919)
+![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/1260b71a-6596-4d86-938e-30d1248ddeb4)
 
-![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/89a1d82a-126b-4a71-b2b2-1099a8ad752a)
-
+![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/2441fee0-719d-4ca5-898d-693fcc5ae0ac)
 
 
 ```{text}
@@ -462,11 +461,10 @@ Case study roadmap - Analyze
    Yes, my data had been properly formatted as showed in the document that every step has rechecked like its data structure or its performance.
 3) What surprises did you discover in the data?
    There was a surprise that even causal users had a number of membership lower than member users,
-   but they spent time with riding more than member users (~10 minutes).
+   but they spent time with average riding time as close as member users rider (around 10-15 minutes).
 4) What trends or relationships did you find in the data?
    From the data itself, each type of member had their own need like popular day of week, causal user perfers to ride
-   on saturday and member user perfers to ride on thrusday. Moreover, causal users counted as only 60% of member users,
-   they spent time to ride more than member users.
+   on saturday and member user perfers to ride on thrusday. Moreover, causal users counted as only 60% of member users.
 5) How will these insights help answer your business questions?
    This insight will help to answer business questions by providing my team with relevant data, analysis and recommendations
    based on how they ride diffenently. This will lead marketing team to better understand of user.
