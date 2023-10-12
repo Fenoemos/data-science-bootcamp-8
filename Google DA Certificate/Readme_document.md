@@ -653,6 +653,8 @@ Case study roadmap - Share
 3) How do your findings relate to your original question?
    It helped us to better understand the different ride behaviors and the need of annual members and casual riders to ride in a day.
 4) Who is your audience? What is the best way to communicate with them?
+   My audience is the secondary stakeholders as mentioned above.
+   They are Lily Moreno and the Cyclistic marketing team.
 5) Can data visualization help you share your findings?
    Yes, sharing insight through data visualization helps audiences keep focus and leads to data-driven desicion.
 6) Is your presentation accessible to your audience?
@@ -667,29 +669,39 @@ Case study roadmap - Share
 'Deliverable'
 [x] Supporting visualizations and key findings
 ```
-### [Notyet] Act
-
-
-
-
-
-
-
+### Act
+The act phase would be done with our stakeholders (Lily Moreno and the Cyclistic marketing team). 
+The top three recommendations for the marketing team as list below:
+   * Casual riders usually take a ride on weekend, so if our marketing team provide special discount on those who ride on weekend.
+     This may lead them to become annual members with Cyclistic.
+   * A rewards program that is exclusive to annual members and is dependent on riding time to encourage casual riders to join and qualify for the prizes.
+   * A campaign or digital marketing is to increase and hold annual members, especially in less popular months (October to January, it is winter season),
+     for example, reducing the price for annual plan membership or publishing other benefits at the docked bike as they were used by casual riders.
+   
 
 ```{text}
 Case study roadmap - Act
 
 'Guiding questing'
 1) What is your final conclusion based on your analysis?
+   There is an opportunity to turn casual riders to annual members because they were likely to ride more than annual members
+   if marketing or digital marketing campaign is interesting enough to them to become more benifits, for example,
+   they usual take a ride on weekend, so if our marketing team provide special discount on those who ride on a weekend.
+   This may lead them to become annual members with Cyclistic.
 2) How could your team and business apply your insights?
+   They could use insight that based on popular day or month that casual riders took a ride to provide special offers
+   that may lead them to become annual members.
 3) What next steps would you or your stakeholders take based on your findings?
+   It is like a long run, further analysis would be very helpful to better understand other aspects of casual riders
+   which can lead the marketing team to think about useful strategies to increase annual members.
 4) Is there additional data you could use to expand on your findings?
+   Yes, additional data that would be useful to expand the insight may be climate data, pricing plan data, historical marketing campaigns, and others.
 
 'Key tasks'
-[] Create your portfolio
-[] Add your case study
-[] Practice presenting your case study to a friend or family member
+[x] Create your portfolio
+[x] Add your case study
+[x] Practice presenting your case study to a friend or family member
 
 'Deliverable'
-[] Your top three recommendations based on your analysis
+[x] Your top three recommendations based on your analysis
 ```
