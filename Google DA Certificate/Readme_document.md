@@ -338,10 +338,13 @@ ggplot(data = cleanData, mapping = aes(x = member_casual, y = rider_length)) +
 write.csv(cleanData, file = "cleaning_data_part2.csv", row.names = FALSE)
 ## Note: Any export or import dataframe, data structure of some columns may change. Do not forget to check it.
 ```
-#### The first
+#### The first picture showed viewing the dataframe with `View()`.
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/32aab755-041b-45e0-97b3-3d2a53df84c8)
+#### The second picture showed "Boxplot about the distribution of ride time in each membership type (data may include outliers)".
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/5235d082-457b-48c9-abc3-0f97f3c8aff4)
+#### The third picture showed the percentage of ride time.
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/22612916-db62-45c1-a830-19adb15b927b)
+#### The fourth picture showed "Boxplot about the distribution of ride time in each membership type (removed outliers)".
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/ff9920f9-d453-4f1d-a700-cbfb8a97331d)
 
 
