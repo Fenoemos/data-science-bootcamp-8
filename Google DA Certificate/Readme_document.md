@@ -642,20 +642,28 @@ Case study roadmap - Share
 
 'Guiding questing'
 1) Were you able to answer the question of how annual members and casual riders use Cyclistic bikes differently?
+   Yes, I was able to answer the main question that based on the data, there were many differences between annual members and casual riders.
 2) What story does your data tell?
+   From the findings, the casual riders had more average riding time than the member riders around 3 minutes. The popular day that casual riders prefer to ride is Saturday
+   as it may be their weekend and for the member riders is Thursday as it is their weekday that they have to go to work. The popular month is June for both groups as
+   it may be their summer and have more time to ride. Overall, the trend of riding in chart 5 showed that both membership type usually ride between 8 AM to 8 PM.
+   There is no members who ride a docked bike as shown in chart 4. Moreover, members increased by 6% from 2022 to 2023 as shown in chart 3.
 3) How do your findings relate to your original question?
+   It helped us to better understand the different ride behaviors and the need of annual members and casual riders to ride in a day.
 4) Who is your audience? What is the best way to communicate with them?
 5) Can data visualization help you share your findings?
+   Yes, sharing insight through data visualization helps audiences keep focus and leads to data-driven desicion.
 6) Is your presentation accessible to your audience?
+   Yes, the graphs have been made using plain color with contrast, and corresponding labels.
 
 'Key tasks'
-[] Determine the best way to share your findings
-[] Create effective data visualizations
-[] Present your findings
-[] Ensure your work is accessible
+[x] Determine the best way to share your findings
+[x] Create effective data visualizations
+[x] Present your findings
+[x] Ensure your work is accessible
 
 'Deliverable'
-[] Supporting visualizations and key findings
+[x] Supporting visualizations and key findings
 ```
 ### [Notyet] Act
 
