@@ -2,11 +2,11 @@
 
 **Case Study 1: How Does a Bike-Share Navigate Speedy Success?**
 
-By [Phattharachai Maichin](https://www.linkedin.com/in/phattharachai-m/)
+by [Phattharachai Maichin](https://www.linkedin.com/in/phattharachai-m/)
 
-start date: 2023-10-06
+Start date: 2023-10-06
 
-last edit: 2023-10-12
+Last edit: 2023-10-12
 ***
 ### Before start
 
