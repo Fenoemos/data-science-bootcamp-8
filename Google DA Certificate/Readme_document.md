@@ -479,11 +479,39 @@ Case study roadmap - Analyze
 [x] A summary of your analysis
 ```
 ### [doing] Share
+#### Documentation of visualization process
+```{r}
+# (step 0) import complete manipulated data with read.csv()
+cleanData <- read.csv("C:\\Users\\phatt\\Desktop\\tripdata_202201_to_202306\\cleaning_and_manipulate_data\\cleaning_data_part2.csv")
+
+## cleanData <- read.csv("C:\\Users\\phatt\\Desktop\\tripdata_202201_to_202306\\cleaning_and_manipulate_data\\cleaning_data_part2-try.csv")
+
+## before visualize data let change to original data structure
+cleanData$day <- as.character(cleanData$day)
+cleanData$year <- as.character(cleanData$year)
+cleanData$date <- as.Date.character(cleanData$date)
+cleanData$rider_length <- as_hms(difftime(cleanData$ended_at, cleanData$started_at))
+
+# to sort data by day of week or month, data need to format
+cleanData$day_of_week <- factor(cleanData$day_of_week, levels = c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"),
+                                                       labels = c("Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"))
+
+cleanData$month <- factor(cleanData$month, levels=c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"))
+
+
+
+
+```
 
 
 
 
 
+
+
+![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/1f8c2a81-8f24-4c74-a639-ef2e6f71fe31)
+![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/ccf7a4a3-915d-4ab1-868b-1c98fb2bd82f)
+![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/22ecdc36-df06-45fc-b9cd-1b8f4ba36423)
 
 
 
