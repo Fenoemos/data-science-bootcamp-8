@@ -1,4 +1,4 @@
-> # [In process] Google Data Analytics Professional Certificate: Capstone
+> # Google Data Analytics Professional Certificate: Capstone
 
 **Case Study 1: How Does a Bike-Share Navigate Speedy Success?**
 
@@ -705,3 +705,5 @@ Case study roadmap - Act
 'Deliverable'
 [x] Your top three recommendations based on your analysis
 ```
+### Conclusion
+I would like to thank the creators of the Google Data Analytics Professional Certificate for giving me the skills, opportunities, guidelines, and useful capstone project to be my first step in data analyst world.
