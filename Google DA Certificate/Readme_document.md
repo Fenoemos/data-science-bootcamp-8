@@ -73,6 +73,7 @@ Case study roadmap - Prepare
 2) How is the data organized?
    For each file, the data contains 13 column consistently as described below.
 ```
+#### Table information
 | **Column Number** | **Column Name** | **Description** |
 |-------------------|-----------------|-----------------|
 | 1      | ride_id  | unique id for each ride booking               |
@@ -119,7 +120,7 @@ Case study roadmap - Prepare (continue)
 ### Process
 The copy of original data files are stored in the folder as shown in the picture. These files will be used and will be used throughout this project. The individual `CSV` files will be combined into one file to make it easier to manipulate and analyse by using `R` because each file have more than 100,000 row and to combine it in `Excel` was not suitable with large data.
 
-
+#### This picture showed the copy of stored original files
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/0179d37b-b1fa-4161-bb0c-21a800780a61)
 
 #### Documentation of cleaning or manipulation process of data
@@ -129,11 +130,7 @@ The copy of original data files are stored in the folder as shown in the picture
 install.packages("tidyverse")
 ## Call "tidyverse" package to use
 library(tidyverse)
-```
-![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/004adc7f-beb5-4e1c-827d-a66774f91aab)
-***
 
-```{r}
 # (Step 1) Import each CSV files into R and store it in each dataframe and quick review the data structure of dataframe
 ## Import CSV with read.csv()
 df2201 <- read.csv("C:\\Users\\phatt\\Desktop\\tripdata_202201_to_202306\\202201-divvy-tripdata.csv")
@@ -163,6 +160,7 @@ glimpse(list(df2201, df2202, df2203, df2204, df2205, df2206, df2207, df2208
 ## The second picture below showed two examples of glimpse() return (df2201 and df2202 data structure) that
 ## were examined throughout all dataframe which had the same data structure.
 ```
+#### The first picture, showed 
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/c9969cbe-c2a4-48d3-bb2e-f90774348b50)
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/d3727343-0a83-4029-a92d-e4a12658dfec)
 ***
@@ -478,7 +476,7 @@ Case study roadmap - Analyze
 'Deliverable'
 [x] A summary of your analysis
 ```
-### [doing] Share
+### Share
 #### Documentation of visualization process
 ```{r}
 # (step 0) import complete manipulated data with read.csv()
@@ -498,21 +496,137 @@ cleanData$day_of_week <- factor(cleanData$day_of_week, levels = c("Monday", "Tue
 
 cleanData$month <- factor(cleanData$month, levels=c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"))
 
+## Main question: the differences between annual members and casual riders  
+##########################################################################
 
+# What was total number of user in each membership type during January 2022 and June 2023?
+# Chart 1 - Total number of user based on their membership type, showed in the first picture
+ggplot(data = cleanData, mapping = aes(x = member_casual, fill = member_casual)) + 
+  geom_bar() +
+  theme_minimal() + 
+  labs(title="Chart 1 - Total number user based on their membership type",
+       subtitle = "during January 2022 and June 2023",
+       x="Membership type",
+       y="Number of user",
+       caption = "Resource: Motivate International Inc.") + 
+  guides(fill = "none")
+
+# Chart 1.1 - Total number of user based on their membership type by month, showed in the second picture
+cleanData %>% 
+  group_by(member_casual, month) %>% 
+  summarise(count = n()) %>%
+  ggplot(mapping = aes(x = month, y = count, fill = member_casual)) +
+  geom_col(position = "dodge") +
+  facet_wrap(~member_casual) +
+  theme_minimal() + 
+  scale_fill_brewer(palette = "Blues") +
+  labs(title="Chart 1.1 - Total number of user based on their membership type by month",
+       subtitle = "during January 2022 and June 2023",
+       x="Membership type",
+       y="Number of user",
+       caption = "Resource: Motivate International Inc.")  + 
+  guides(fill = "none")
+
+
+# Which day in a week did each type of user prefer to ride?
+# Chart 2 - Average ride time based on their membership type during a week, showed in the thrid picture
+cleanData %>% 
+  group_by(member_casual, day_of_week) %>% 
+  summarise(number_of_riders = n(), 
+            average_ride_time = as_hms(as.numeric(mean(rider_length)))) %>%
+  ggplot(mapping = aes(x = day_of_week, y = average_ride_time, fill = member_casual)) + 
+  geom_col(position = "dodge") +
+  theme_minimal() + 
+  scale_fill_brewer(palette = "Blues") +
+  labs(title="Chart 2 - Average ride time based on their membership type during a week",
+       x="Day of week",
+       y="Average ride time, minutes",
+       caption = "Resource: Motivate International Inc.")
+
+# Chart 2.1 - Average ride time based on their membership type during a year, showed in the fourth picture
+cleanData %>% 
+  group_by(member_casual, month, day_of_week) %>% 
+  summarise(number_of_riders = n(), 
+            average_ride_time = as_hms(as.numeric(mean(rider_length)))) %>%
+  ggplot(mapping = aes(x = day_of_week, y = average_ride_time, fill = member_casual)) + 
+  geom_col(position = "dodge") +
+  theme_minimal() +
+  scale_fill_brewer(palette = "Blues") +
+  labs(title="Chart 2 - Average ride time based on their membership type during a year",
+       x="Day of week",
+       y="Average ride time, minutes",
+       caption = "Resource: Motivate International Inc.") + 
+  facet_wrap(~month)
+
+# Were there any change in percent of user that became a member?
+# Chart 3 - Percent of user based on their membership type in year 2022 and 2023, showed in the fifth picture
+cleanData %>%
+  group_by(year, member_casual) %>%
+  summarise(count = n()) %>%
+  mutate(percent = count / sum(count)) %>%
+  ggplot(aes(x = year, y = percent, fill = member_casual)) + 
+  geom_col(position = "fill") +
+  theme_minimal() + 
+  scale_fill_brewer(palette = "Blues")  + 
+  labs(title="Chart 3 - Percent of user based on their membership type",
+       subtitle = "in year 2022 and 2023",
+       x="Year",
+       y="Percent of users, %",
+       caption = "Resource: Motivate International Inc.") +
+  geom_text(aes(label = paste0(round(100 * percent, 1), "%")), 
+            position = position_fill(vjust = 0.5), size = 3)
+
+# Which type of bike did users prefer to use?
+# Chart 4 - Percent of user based on their membership type in each type of bike, showed in the sixth picture
+cleanData %>%
+  group_by(rideable_type, member_casual) %>% 
+  summarise(count = n()) %>% 
+  mutate(percent = count/sum(count)) %>%
+  ggplot(mapping = aes(x = rideable_type, y = percent, fill = member_casual)) + 
+  geom_col(position = "fill") +
+  coord_flip() +
+  theme_minimal() + 
+  scale_fill_brewer(palette = "Blues") +
+  labs(title="Chart 4 - Percent of user based on their membership type",
+       subtitle = "in each type of bike",
+       x="Type of bike",
+       y="Percent of user",
+       caption = "Resource: Motivate International Inc.") +
+  geom_text(aes(label = paste0(round(100 * percent, 1), "%")), 
+            position = position_fill(vjust = 0.5), size = 3)
+
+# What were trend of bike ride in a day?
+# Chart 5 - Trend of bike ride in a day based on their membership type, showed in the seventh picture
+cleanData %>%
+  mutate(start_hour = strftime(started_at, "%H")) %>%
+  ggplot(mapping = aes(start_hour, fill=member_casual)) +
+  geom_bar() +
+  facet_wrap(~ day_of_week) + 
+  theme_minimal() + 
+  scale_fill_brewer(palette = "Blues")  + 
+  labs(title="Chart 5 - Trend of bike ride in a day based on their membership type",
+       subtitle = "in year 2022 and 2023",
+       x="24-hour clock",
+       y="Number of users",
+       caption = "Resource: Motivate International Inc.")
 
 
 ```
-
-
-
-
-
-
-
+#### Visual in this section
+##### The first picture
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/1f8c2a81-8f24-4c74-a639-ef2e6f71fe31)
+##### The second picture
+![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/97086a11-b23b-456c-bb30-aaa4db074265)
+##### The thrid picture
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/ccf7a4a3-915d-4ab1-868b-1c98fb2bd82f)
+##### the fourth picture
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/22ecdc36-df06-45fc-b9cd-1b8f4ba36423)
-
+##### the fifth picture
+![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/9a7d9252-6273-430f-b73e-989dd5f35009)
+##### the sixth picture
+![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/cdf551a3-44f3-4164-b727-3759fe8a6cef)
+##### the seventh picture
+![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/da78292a-8aee-4ca6-8e50-07defa9910a1)
 
 
 ```{text}
