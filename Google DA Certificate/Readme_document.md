@@ -5,7 +5,7 @@
 By [Phattharachai Maichin](https://www.linkedin.com/in/phattharachai-m/)
 start date: 2023-10-06
 last edit: 2023-10-12
----
+***
 ### Before start
 
 I have recently completed the Google Data Analytics Professional Certificate program on Coursera. As part of this course, students are required to complete a data analysis case study to show the skills learned throughout the course and here is my capstone project. For this case study, I used excel and R programming for the data preparation and visualization analysis. Moreover, this project will be followed these steps to ensure its completion:
