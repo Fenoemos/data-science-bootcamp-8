@@ -176,7 +176,7 @@ df_bike_unclean <- bind_rows(list(df2201, df2202, df2203, df2204, df2205, df2206
 cat(paste("Total row in unclean dataframe:", nrow(df_bike_unclean), "rows \n"))
 ### The result showed that there are 8,058,176 rows in the original files.
 ```
-#### The picture showed result after combined 18 dataframe into one dataframe
+#### The picture below showed the result after combining 18 dataframe into one dataframe
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/e3937c4d-7fdb-4535-acec-866d4fbd412b)
 ***
 
@@ -248,11 +248,11 @@ cleanby_remove_duplicate(cleanData)
 write.csv(cleanData, file = "cleaning_data_part1.csv", row.names = FALSE)
 ## Note: Any export or import dataframe, data structure of some columns may change. Do not forget to check it.
 ```
-#### The first 
+#### The first picture showed first step of cleaning dataframe by searching for missing values
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/4f9563b8-c50f-49f5-aac4-45f376ae7bac)
-#### The second
+#### The second picture showed applying a process of cleaning dataframe by using user-defined function with `na.omit()` to remove missing values.
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/38a9aacb-531e-430a-ab3d-3ecaa3d8092c)
-#### The third
+#### The third picture showed applying a process of cleaning dataframe by using user-defined function with `distinct()` to remove duplicate values.
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/1353b927-4ed4-4882-ac0d-3b3ed1d1d71c)
 ***
 
@@ -338,6 +338,7 @@ ggplot(data = cleanData, mapping = aes(x = member_casual, y = rider_length)) +
 write.csv(cleanData, file = "cleaning_data_part2.csv", row.names = FALSE)
 ## Note: Any export or import dataframe, data structure of some columns may change. Do not forget to check it.
 ```
+#### The first
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/32aab755-041b-45e0-97b3-3d2a53df84c8)
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/5235d082-457b-48c9-abc3-0f97f3c8aff4)
 ![image](https://github.com/Fenoemos/data-science-bootcamp-8/assets/145377446/22612916-db62-45c1-a830-19adb15b927b)
