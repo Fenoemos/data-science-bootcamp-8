@@ -17,10 +17,6 @@ I have recently completed the Google Data Analytics Professional Certificate pro
       + Guiding questions, with answers.
       + Key tasks, as a checklist.
       + Deliverable, as a checklist.
-***
-### List of contents
-
-
 ___
 ### Background
 
