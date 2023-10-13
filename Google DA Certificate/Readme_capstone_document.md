@@ -34,6 +34,7 @@ Therefore, my task is to analyze Cyclistic historical bike trip data to provide 
  + Secondary stakeholder: Lily Moreno, the director of marketing and my manager, as she is responsible for the campaigns development to promote benefit to convert Cyclistic's casual riders to become annual members.
 
 **My task**
+
 As Moreno has assigned the first question to me: How do annual members and casual riders use Cyclistic bikes differently?
 
 So, my business task is to determine the differences between annual members and casual riders and which marketing strategy will help to increase annual members.
