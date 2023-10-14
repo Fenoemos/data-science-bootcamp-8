@@ -32,16 +32,61 @@ Otherwise, Waze may simply lose these users without knowing why.
 
 Your insights will help Waze leadership optimize the company’s retention strategy, enhance user experience, and make data-driven decisions about product development.  
 ___
-### Project background
+#### Project background
 Waze’s data team is in the earliest stages of the churn project. The following tasks are needed before the team can begin the data analysis process:
    + A project proposal identifying the following:
         * Organize project tasks into milestones
         * Classify tasks using the PACE workflow
         * Identify relevant stakeholders
 ___
-### Your assignment
+#### Your assignment
 For your first assignment, Waze is asking for a project proposal that will create milestones for the tasks within this project. 
 Remember to take into account your audience, team, project goal, and PACE stages of each task in planning your project deliverable.
-* _Note:_ * This project's dataset was created for pedagogical purposes and does not represent Waze’s actual data.
+**_Note:_** This project's dataset was created for pedagogical purposes and does not represent Waze’s actual data.
 
+### Team members at Waze
+As a new data analyst, you’ll work closely with a talented team of experienced data professionals. 
+You’ll also collaborate with Waze co-workers outside the data team as your project requires.
 
+#### **Data team roles**
+   + Harriet Hadzic - Director of Data Analysis
+   + May Santner - Data Analysis Manager
+   + Chidi Ga - Senior Data Analyst
+   + Sylvester Esperanza - Senior Project Manager 
+
+#### **Other roles in the scenario**
+   + Emrick Larson - Finance and Administration Department Head
+   + Ursula Sayo - Operations Manager
+
+**_Note:_** The story, all names, characters, and incidents portrayed in this project are fictitious. 
+No identification with actual persons (living or deceased) is intended or should be inferred. The data shared in this project has been altered for pedagogical purposes.
+
+The members of the data team have technical expertise in data analysis, and are familiar with  terms and concepts from statistics and machine learning. 
+To communicate effectively with data team members, make sure your messages are clear, concise, and focused on key points. 
+
+Waze co-workers outside the data team may not have a background in data analysis, or be familiar with technical terms and concepts. 
+When communicating with these co-workers, make sure to adjust your language to fit your audience, and clearly explain technical terms if necessary.
+
+### Meeting notes
+After onboarding, you are given access to the company network and set up with a company email account (your first initial and last name, followed by @Waze).
+
+Opening your inbox, you notice an email from your supervisor, May Santner. 
+
+**From:**  “May Santner,” May@waze.com 
+
+**Subject:** Your first task: Review meeting notes
+
+If you are reading this message, then your company accounts have been created! Now is the perfect time to get started. Last week, I attended an internal meeting with our leadership team about a new project. You’ll receive more information in the next few days, but I’d like you to be aware of some key points made by leadership. Here is an excerpt from my meeting notes. I’ve organized the points by the person who made them.
+#### Sylvester Esperanza, Senior Project Manager
+   + The data team will need a global-level project document to outline project goals and milestones.
+   + We will need to generate some visuals to share with the Waze executives.
+#### Chidi Ga, Senior Data Analyst
+   + The dataset has to be inspected before any analysis can begin.
+   + The data team needs to learn more about the data through exploratory data analysis (EDA).
+   + Eventually, our team will need to test the model to find out if it's delivering consistent results.
+#### Harriet Hadzic, Director of Data Analysis
+   + Before we share any insights, we'll need to determine whether or not our model meets the project requirements.
+   + Once we finalize the model, I'll need to know the main talking points for our presentation to the leadership team.
+#### My thoughts and concerns… 
+   + I think it's best to use Python for this project. I'll have someone on my team set that up as soon as we have the project proposal in place.
+       * It will be important to establish the relationship between key variables in the dataset. I'd suggest the data team consider hypothesis testing.
