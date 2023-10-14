@@ -33,4 +33,9 @@ Otherwise, Waze may simply lose these users without knowing why.
 Your insights will help Waze leadership optimize the company’s retention strategy, enhance user experience, and make data-driven decisions about product development.  
 ___
 ### Project background
+Waze’s data team is in the earliest stages of the churn project. The following tasks are needed before the team can begin the data analysis process:
+   + A project proposal identifying the following:
+        * Organize project tasks into milestones
+        * Classify tasks using the PACE workflow
+        * Identify relevant stakeholders
 
