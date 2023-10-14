@@ -90,3 +90,17 @@ If you are reading this message, then your company accounts have been created! N
 #### My thoughts and concerns… 
    + I think it's best to use Python for this project. I'll have someone on my team set that up as soon as we have the project proposal in place.
        * It will be important to establish the relationship between key variables in the dataset. I'd suggest the data team consider hypothesis testing.
+
+Review the meeting notes and proposed tasks from each team member to become familiar with the project’s context. I’ll ask you to identify project tasks and come up with a structure to guide the data team through this project. After our discussion about your experience in the Google certificate program, I know that your efficient communication style and strong problem-solving skills will help the data team achieve its goals. 
+
+There will be more details sent to you soon.
+
+Welcome to the team,
+
+May Santner 
+
+Data Analysis Manager
+
+Waze
+
+(P.S. Don’t forget about our Data Superstars discussion group. Our next session is this Friday at 3pm. Each month, the team gets together to discuss the work of an innovative and inspiring historical figure. This month, it’s Ada Lovelace, often considered the world’s first computer programmer. This event is also a great opportunity to get to know your new teammates - and, if you want, try the outstanding coffee in the Waze cafe! Please join us!)
