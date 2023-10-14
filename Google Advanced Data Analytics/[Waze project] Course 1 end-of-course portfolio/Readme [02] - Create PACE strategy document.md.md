@@ -15,9 +15,9 @@ You are the newest member of the Waze data analytics team. Your supervisor, May 
 ___
 <ins>**Email from May Santner, Data Analysis Manager**</ins>
 
-Subject: Welcome to Waze!
+**Subject:** Welcome to Waze!
 
-From: “May Santner,” May@waze
+**From:** “May Santner,” <ins>May@waze</ins>
 
 Hello, and welcome to the team! 
 
@@ -36,7 +36,7 @@ May Santner
 Data Analysis Manager
 
 Waze
-
+___
    + X
 
 ___
