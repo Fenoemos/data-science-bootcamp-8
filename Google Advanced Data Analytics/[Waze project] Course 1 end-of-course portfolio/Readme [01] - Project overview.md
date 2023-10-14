@@ -38,4 +38,10 @@ Waze’s data team is in the earliest stages of the churn project. The following
         * Organize project tasks into milestones
         * Classify tasks using the PACE workflow
         * Identify relevant stakeholders
+___
+### Your assignment
+For your first assignment, Waze is asking for a project proposal that will create milestones for the tasks within this project. 
+Remember to take into account your audience, team, project goal, and PACE stages of each task in planning your project deliverable.
+* _Note:_ * This project's dataset was created for pedagogical purposes and does not represent Waze’s actual data.
+
 
