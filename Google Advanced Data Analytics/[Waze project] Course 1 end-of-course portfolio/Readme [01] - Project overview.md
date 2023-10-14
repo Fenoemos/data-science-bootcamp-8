@@ -1,6 +1,6 @@
 > # Google Advanced Data Analytics Professional Certificate
 
-**##Course 1 end-of-course portfolio project overview: Waze##**
+##**Course 1 end-of-course portfolio project overview: Waze**##
 
 by [Phattharachai Maichin](https://www.linkedin.com/in/phattharachai-m/)
 
