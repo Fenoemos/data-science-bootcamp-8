@@ -37,6 +37,6 @@ Data Analysis Manager
 
 Waze
 ___
-   + X
-
+   + PACE strategy document
+   + Project Proposal
 ___
