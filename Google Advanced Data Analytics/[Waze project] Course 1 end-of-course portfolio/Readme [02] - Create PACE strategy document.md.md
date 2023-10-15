@@ -40,4 +40,5 @@ ___
 ### My Response
 + [PACE strategy document](https://docs.google.com/document/d/1wHo0TWOor242YQ4iAgZOb_ZrtrlGl3sNC8FycPo3MSE/edit)
 + [Project Proposal](https://docs.google.com/document/d/1orNPJlZcPHTLAMD1BujwWfmLKyJHNGgWe4oQtseX6-A/edit)
+
 **_Note:_** My response, based on my perspective, below may be different from the real and correct answer provided in the course.
