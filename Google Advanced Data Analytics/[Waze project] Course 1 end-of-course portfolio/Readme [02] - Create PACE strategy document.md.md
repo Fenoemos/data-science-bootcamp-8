@@ -37,6 +37,7 @@ Data Analysis Manager
 
 Waze
 ___
-   + PACE strategy document
-   + Project Proposal
-___
+### My Response
+My response below may be different from the real answer provided in the course based on my perspective.
++ [PACE strategy document](https://docs.google.com/document/d/1wHo0TWOor242YQ4iAgZOb_ZrtrlGl3sNC8FycPo3MSE/edit)
++ [Project Proposal](https://docs.google.com/document/d/1orNPJlZcPHTLAMD1BujwWfmLKyJHNGgWe4oQtseX6-A/edit)
