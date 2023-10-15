@@ -42,6 +42,7 @@ ___
 #### Your assignment
 For your first assignment, Waze is asking for a project proposal that will create milestones for the tasks within this project. 
 Remember to take into account your audience, team, project goal, and PACE stages of each task in planning your project deliverable.
+
 **_Note:_** This project's dataset was created for pedagogical purposes and does not represent Waze’s actual data.
 
 ### Team members at Waze
